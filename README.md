@@ -65,11 +65,6 @@ targets, sooner, is acting where months matter.
 
 ## See the key ideas in motion
 
-**Decode the non-coding.** NCypher reads the regulatory genome of a childhood cancer no one had read,
-in the cell type where the disease begins.
-
-<p align="center"><img src="assets/motion-logo.gif" width="540" alt="NCypher logo and tagline"></p>
-
 **The mechanism, made visible.** At a single base the alternate allele builds a GGAA ETS motif; the
 ref-vs-alt DeepSHAP saliency shows the model reading the exact letter that changes, not just returning
 a number.
