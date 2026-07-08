@@ -61,16 +61,16 @@ export const VERDICT_META: Record<
 > = {
   GO: {
     label: "GO",
-    colour: "#0A6558",
-    bg: "#E7F6F3",
-    ring: "#0E9E8A",
+    colour: "#0600f9",
+    bg: "#ecebfe",
+    ring: "#0600f9",
     blurb: "Validate: two axes converge in domain",
   },
   HOLD: {
     label: "HOLD",
-    colour: "#8A560B",
-    bg: "#FBF0DE",
-    ring: "#C77D11",
+    colour: "#a16207",
+    bg: "#fef9c3",
+    ring: "#eab308",
     blurb: "Informative disagreement: resolve before bench",
   },
   "NO-GO": {

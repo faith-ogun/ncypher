@@ -73,7 +73,7 @@ export function TheFinding() {
           />
         </div>
 
-        <p className="mt-4 rounded-lg border border-line bg-[#FBF6EE]/70 px-4 py-3 text-[12.5px] leading-snug text-ink/90">
+        <p className="mt-4 rounded-lg border border-line bg-[#fefce8]/70 px-4 py-3 text-[12.5px] leading-snug text-ink/90">
           <span className="font-semibold">Stated plainly.</span> The converged p = 0.029 is nominal,
           and several gene sets were tested before the strict canonical one, so treat it as
           suggestive, not decisive. The bulletproof number is the constraint-axis p = 4.8e-13. The
@@ -83,7 +83,7 @@ export function TheFinding() {
 
       {/* NPAS3 lead */}
       <Card className="mt-6 overflow-hidden">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-teal-50/40 px-6 py-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-brand-50/40 px-6 py-4">
           <div>
             <div className="flex items-center gap-2.5">
               <h2 className="text-[19px] font-bold text-ink">NPAS3</h2>
@@ -157,8 +157,8 @@ export function TheFinding() {
                 (Michaelsen 2025). The accessibility-loss direction fits tumour-suppressor silencing.
               </p>
             </div>
-            <div className="rounded-xl border border-[#EBD3A6] bg-[#FBF6EE]/70 p-4">
-              <div className="text-[12px] font-semibold uppercase tracking-wide text-hold">
+            <div className="rounded-xl border border-[#fde68a] bg-[#fefce8]/70 p-4">
+              <div className="text-[12px] font-semibold uppercase tracking-wide text-[#a16207]">
                 Honest caveats
               </div>
               <ul className="mt-1.5 space-y-1.5 text-[12.5px] leading-snug text-ink/90">
@@ -183,7 +183,7 @@ export function TheFinding() {
           <div className="mt-4 space-y-2.5">
             {THERAPY_AXES.map((t) => (
               <div key={t.id} className="flex gap-3 rounded-xl border border-line bg-page/40 p-3.5">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-teal-500 font-mono text-[13px] font-bold text-white">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-500 font-mono text-[13px] font-bold text-white">
                   {t.id}
                 </div>
                 <div className="min-w-0">
@@ -216,7 +216,7 @@ export function TheFinding() {
             {D.finding.convergedGenes.map((g) => (
               <span
                 key={g}
-                className="rounded-lg border border-teal-200 bg-teal-50 px-3 py-1.5 font-mono text-[13px] font-semibold text-teal-700"
+                className="rounded-lg border border-brand-200 bg-brand-50 px-3 py-1.5 font-mono text-[13px] font-semibold text-brand-700"
               >
                 {g}
               </span>
@@ -260,7 +260,7 @@ function ReadCell({
   head: string;
   body: string;
 }) {
-  const border = tone === "teal" ? "border-l-teal-400" : "border-l-[#AEBCC2]";
+  const border = tone === "teal" ? "border-l-brand-400" : "border-l-[#94a3b8]";
   return (
     <div className={`rounded-lg border border-line border-l-[3px] bg-card px-4 py-3 ${border}`}>
       <div className="text-[13px] font-bold text-ink">{head}</div>

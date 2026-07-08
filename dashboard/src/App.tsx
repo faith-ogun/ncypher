@@ -44,7 +44,7 @@ function GuardrailFooter() {
     <footer className="mx-auto max-w-6xl px-8 pb-10">
       <div className="rounded-xl2 border border-line bg-card p-5 shadow-card">
         <div className="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" className="h-4 w-4 text-teal-600" fill="none">
+          <svg viewBox="0 0 24 24" className="h-4 w-4 text-brand-600" fill="none">
             <path
               d="M12 3 4 6v5c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6l-8-3Z"
               stroke="currentColor"

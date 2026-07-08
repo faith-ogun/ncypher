@@ -10,17 +10,17 @@ export interface HBarRow {
 }
 
 const BAR_TONES: Record<string, string> = {
-  teal: "#0E9E8A",
-  amber: "#C77D11",
-  grey: "#AEBCC2",
+  teal: "#0600f9",
+  amber: "#eab308",
+  grey: "#94a3b8",
   red: "#DA4A42",
-  blue: "#2F6FE0",
+  blue: "#0600f9",
 };
 
 const ANN_TONES: Record<string, { c: string; bg: string }> = {
-  strong: { c: "#0A6558", bg: "#E7F6F3" },
-  nominal: { c: "#8A560B", bg: "#FBF0DE" },
-  ns: { c: "#5A6B72", bg: "#EEF2F4" },
+  strong: { c: "#0600f9", bg: "#ecebfe" },
+  nominal: { c: "#a16207", bg: "#fef9c3" },
+  ns: { c: "#3d4152", bg: "#e2e8f0" },
 };
 
 export function HBarChart({
@@ -65,7 +65,7 @@ export function HBarChart({
                         width: pct(r.value),
                         backgroundColor: BAR_TONES[r.tone],
                         minWidth: 34,
-                        boxShadow: r.emphasise ? "0 2px 8px rgba(14,158,138,0.30)" : undefined,
+                        boxShadow: r.emphasise ? "0 2px 8px rgba(6,0,249,0.22)" : undefined,
                       }}
                     >
                       <span className="font-mono text-[12.5px] font-bold text-white tnum">

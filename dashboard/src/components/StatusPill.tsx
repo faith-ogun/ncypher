@@ -32,9 +32,9 @@ export function StatusPill({
 export function ConfidenceBadge({ tier }: { tier: string }) {
   const t = tier.toUpperCase();
   const map: Record<string, { c: string; bg: string }> = {
-    HIGH: { c: "#0A6558", bg: "#E7F6F3" },
-    MEDIUM: { c: "#8A560B", bg: "#FBF0DE" },
-    LOW: { c: "#5A6B72", bg: "#EEF2F4" },
+    HIGH: { c: "#0600f9", bg: "#ecebfe" },
+    MEDIUM: { c: "#a16207", bg: "#fef9c3" },
+    LOW: { c: "#3d4152", bg: "#e2e8f0" },
   };
   const s = map[t] ?? map.LOW;
   return (

@@ -5,30 +5,33 @@ export default {
     extend: {
       colors: {
         // Light theme surfaces (the builder cannot read dark UIs)
-        page: "#F6F8F9",
-        card: "#FFFFFF",
-        ink: "#0F1E24", // near-black teal-slate for body text
-        muted: "#59717A", // secondary text
-        faint: "#8497A0", // tertiary text
-        line: "#E3E9EC", // borders
-        lineStrong: "#CDD8DD",
-        // Brand accent
-        teal: {
-          50: "#E7F6F3",
-          100: "#C9ECE6",
-          200: "#95DBD0",
-          300: "#5FC6B7",
-          400: "#2FAF9E",
-          500: "#0E9E8A", // primary accent
-          600: "#0B7F6F",
-          700: "#0A6558",
-          800: "#084F45",
+        page: "#f1f5f9", // cream, page background
+        card: "#ffffff", // white, elevated cards
+        panel: "#e2e8f0", // cream-200, secondary panels and the sidebar
+        ink: "#0e0f23", // primary text
+        ink800: "#16172f", // elevated dark surface
+        muted: "#3d4152", // slate, secondary text
+        faint: "#64748b", // slate, tertiary text
+        line: "#d5dbe6", // borders
+        lineStrong: "#b9c2d1",
+        // Electric-blue brand accent (scale key kept as `brand`)
+        brand: {
+          50: "#ecebfe",
+          100: "#d9d6fe",
+          200: "#bab4fd",
+          300: "#8b83fc",
+          400: "#443cfb",
+          500: "#0600f9", // primary accent
+          600: "#0600f9", // accent text (exact brand hex)
+          700: "#0500cc", // deeper accent text on tints
+          800: "#0400a0",
         },
         // Verdict colours
-        go: "#0E9E8A",
-        hold: "#C77D11",
-        nogo: "#DA4A42",
-        // DNA base colours (fixed spec)
+        go: "#0600f9", // electric blue
+        hold: "#eab308", // amber
+        nogo: "#DA4A42", // red (kept)
+        amber: "#eab308", // amber highlight
+        // DNA base colours (fixed spec, sequence data only)
         baseA: "#2E9E43",
         baseC: "#2F6FE0",
         baseG: "#C67F12",
@@ -55,9 +58,9 @@ export default {
         ],
       },
       boxShadow: {
-        card: "0 1px 2px rgba(15,30,36,0.04), 0 4px 16px rgba(15,30,36,0.05)",
-        pill: "0 1px 2px rgba(15,30,36,0.10)",
-        lift: "0 8px 30px rgba(15,30,36,0.08)",
+        card: "0 1px 2px rgba(14,15,35,0.04), 0 4px 16px rgba(14,15,35,0.06)",
+        pill: "0 1px 2px rgba(14,15,35,0.10)",
+        lift: "0 8px 30px rgba(14,15,35,0.09)",
       },
       borderRadius: {
         xl2: "1.1rem",

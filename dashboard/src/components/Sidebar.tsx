@@ -60,15 +60,16 @@ export function Sidebar({
 }) {
   const c = data.cohort;
   return (
-    <aside className="flex w-[264px] shrink-0 flex-col border-r border-line bg-card">
-      {/* Brand */}
-      <div className="flex items-center gap-3 px-6 pb-5 pt-6">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500 font-mono text-[17px] font-bold text-white shadow-pill">
-          NC
-        </div>
-        <div>
-          <div className="text-[17px] font-bold leading-tight text-ink">NCypher</div>
-          <div className="text-[11.5px] font-medium text-muted">decode the non-coding</div>
+    <aside className="flex w-[264px] shrink-0 flex-col border-r border-line bg-panel">
+      {/* Brand: the NCypher logo lockup on a white card. The logo carries the
+          wordmark and tagline, so it replaces the old text wordmark. */}
+      <div className="px-5 pb-5 pt-5">
+        <div className="rounded-xl border border-line bg-white p-2.5 shadow-card">
+          <img
+            src="/logo_upscaled.png"
+            alt="NCypher, decode the non-coding"
+            className="block w-full"
+          />
         </div>
       </div>
 
@@ -83,18 +84,18 @@ export function Sidebar({
               key={n.id}
               onClick={() => setView(n.id)}
               className={`group flex items-start gap-3 rounded-xl px-3 py-2.5 text-left transition-colors ${
-                active ? "bg-teal-50" : "hover:bg-page"
+                active ? "bg-brand-50" : "hover:bg-page"
               }`}
             >
               <span
-                className={`mt-0.5 ${active ? "text-teal-600" : "text-faint group-hover:text-muted"}`}
+                className={`mt-0.5 ${active ? "text-brand-600" : "text-faint group-hover:text-muted"}`}
               >
                 {n.icon}
               </span>
               <span className="min-w-0">
                 <span
                   className={`block text-[14px] font-semibold ${
-                    active ? "text-teal-700" : "text-ink"
+                    active ? "text-brand-700" : "text-ink"
                   }`}
                 >
                   {n.label}
@@ -123,7 +124,7 @@ export function Sidebar({
       </div>
 
       <div className="mt-auto px-6 pb-5 pt-6">
-        <div className="rounded-lg border border-line bg-page px-3 py-2.5 text-[11px] leading-snug text-muted">
+        <div className="rounded-lg border border-line bg-white px-3 py-2.5 text-[11px] leading-snug text-muted">
           Model context{" "}
           <span className="font-mono text-[10.5px] text-ink">trevino_2021.c15</span> · fetal-OPC
           ChromBPNet · GRCh38. Hypothesis-generating triage, not proven drivers.
@@ -139,7 +140,7 @@ function SnapRow({ k, v, strong = false }: { k: string; v: string; strong?: bool
       <dt className="text-muted">{k}</dt>
       <dd
         className={`font-mono tnum ${
-          strong ? "text-[14px] font-bold text-teal-600" : "text-[13px] font-semibold text-ink"
+          strong ? "text-[14px] font-bold text-brand-600" : "text-[13px] font-semibold text-ink"
         }`}
       >
         {v}

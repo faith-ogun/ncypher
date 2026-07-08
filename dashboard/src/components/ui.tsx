@@ -41,11 +41,11 @@ export function Tag({
 }) {
   const tones: Record<string, string> = {
     neutral: "bg-page text-muted border-line",
-    teal: "bg-teal-50 text-teal-700 border-teal-200",
-    amber: "bg-[#FBF0DE] text-[#8A560B] border-[#EBD3A6]",
+    teal: "bg-brand-50 text-brand-700 border-brand-200",
+    amber: "bg-[#fef9c3] text-[#a16207] border-[#fde68a]",
     red: "bg-[#FBE9E8] text-[#A32E28] border-[#F0C8C5]",
     green: "bg-[#E9F6EC] text-[#256E33] border-[#C3E4CB]",
-    blue: "bg-[#E8F0FD] text-[#23509E] border-[#C6D8F6]",
+    blue: "bg-[#ecebfe] text-[#0600f9] border-[#bab4fd]",
   };
   return (
     <span
@@ -69,9 +69,9 @@ export function Stat({
 }) {
   const tones: Record<string, string> = {
     ink: "text-ink",
-    teal: "text-teal-600",
+    teal: "text-brand-600",
     red: "text-nogo",
-    amber: "text-hold",
+    amber: "text-[#a16207]",
   };
   return (
     <div>

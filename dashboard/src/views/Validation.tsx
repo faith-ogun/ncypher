@@ -49,9 +49,9 @@ export function Validation() {
               and fail on a mismatched set. It does exactly that.
             </p>
           </div>
-          <div className="rounded-xl bg-teal-50 px-4 py-2.5 text-center">
-            <div className="font-mono text-[24px] font-bold text-teal-600 tnum">7.5x</div>
-            <div className="text-[11px] font-medium text-teal-700">matched context</div>
+          <div className="rounded-xl bg-brand-50 px-4 py-2.5 text-center">
+            <div className="font-mono text-[24px] font-bold text-brand-600 tnum">7.5x</div>
+            <div className="text-[11px] font-medium text-brand-700">matched context</div>
           </div>
         </div>
 
@@ -75,7 +75,7 @@ export function Validation() {
             </thead>
             <tbody>
               {rows.map((r) => (
-                <tr key={r.set} className={`border-b border-line/70 ${matched(r.set) ? "bg-teal-50/40" : ""}`}>
+                <tr key={r.set} className={`border-b border-line/70 ${matched(r.set) ? "bg-brand-50/40" : ""}`}>
                   <td className="py-2 pr-3 font-medium text-ink">{r.set.replace(/\s*\(.*\)/, "")}</td>
                   <td className="py-2 pr-3 text-right font-mono tnum text-ink">{r.n_pos}</td>
                   <td className="py-2 pr-3 text-right font-mono tnum text-ink">{fmtNum(r.auprc, 3)}</td>
@@ -99,8 +99,8 @@ export function Validation() {
           </table>
         </div>
 
-        <p className="mt-4 rounded-lg border border-line bg-teal-50/50 px-4 py-3 text-[12.5px] leading-snug text-ink/90">
-          <span className="font-semibold text-teal-700">The USP, quantified.</span> The model is not
+        <p className="mt-4 rounded-lg border border-line bg-brand-50/50 px-4 py-3 text-[12.5px] leading-snug text-ink/90">
+          <span className="font-semibold text-brand-700">The USP, quantified.</span> The model is not
           generically good, it is good in its matched context: progenitor caQTLs at AUROC 0.689 and
           7.5x the base rate, weaker for neuron, and null for the mismatched PsychENCODE set (AUROC
           0.449, below chance). That is why context is a first-class part of every verdict.
@@ -111,8 +111,8 @@ export function Validation() {
       <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* MPRA honest negative */}
         <Card className="overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-line bg-[#FBF6EE]/70 px-6 py-3.5">
-            <svg viewBox="0 0 24 24" className="h-4 w-4 text-hold" fill="none">
+          <div className="flex items-center gap-2 border-b border-line bg-[#fefce8]/70 px-6 py-3.5">
+            <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#a16207]" fill="none">
               <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
               <path d="M12 8v5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
               <circle cx="12" cy="16" r="0.6" fill="currentColor" stroke="currentColor" />
@@ -146,8 +146,8 @@ export function Validation() {
 
         {/* Orthogonality */}
         <Card className="overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-line bg-teal-50/50 px-6 py-3.5">
-            <svg viewBox="0 0 24 24" className="h-4 w-4 text-teal-600" fill="none">
+          <div className="flex items-center gap-2 border-b border-line bg-brand-50/50 px-6 py-3.5">
+            <svg viewBox="0 0 24 24" className="h-4 w-4 text-brand-600" fill="none">
               <path d="M5 19V5M5 19h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
               <path d="M5 19 19 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="2 2.5" />
             </svg>
@@ -194,7 +194,7 @@ function MiniStat({ value, label, sub }: { value: string; label: string; sub: st
 function OrthoRow({ head, body }: { head: string; body: string }) {
   return (
     <li className="flex gap-2.5">
-      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500" />
+      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
       <span>
         <span className="text-[13px] font-semibold text-ink">{head}. </span>
         <span className="text-[12.5px] leading-snug text-muted">{body}</span>

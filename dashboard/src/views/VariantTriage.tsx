@@ -77,7 +77,7 @@ export function VariantTriage() {
                 }}
                 className={`group flex items-center gap-2 rounded-full border px-3 py-1.5 text-[13px] transition-all ${
                   active
-                    ? "border-teal-300 bg-teal-50 shadow-pill"
+                    ? "border-brand-300 bg-brand-50 shadow-pill"
                     : "border-line bg-card hover:border-lineStrong hover:bg-page"
                 }`}
               >
@@ -86,7 +86,7 @@ export function VariantTriage() {
                   style={{ backgroundColor: m.ring }}
                   title={v}
                 />
-                <span className={`font-semibold ${active ? "text-teal-700" : "text-ink"}`}>
+                <span className={`font-semibold ${active ? "text-brand-700" : "text-ink"}`}>
                   {h.label}
                 </span>
                 <span className="hidden text-[11px] text-muted sm:inline">{kindLabel(h.kind)}</span>
@@ -111,7 +111,7 @@ export function VariantTriage() {
             />
             <button
               onClick={submitQuery}
-              className="rounded-lg bg-teal-500 px-3 py-1 text-[12.5px] font-semibold text-white transition-colors hover:bg-teal-600"
+              className="rounded-lg bg-brand-500 px-3 py-1 text-[12.5px] font-semibold text-white transition-colors hover:bg-brand-600"
             >
               Score
             </button>
@@ -188,7 +188,7 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
           <StatusPill verdict={verdict} size="lg" />
           <div className="flex items-center gap-2">
             {ood ? (
-              <span className="rounded-md bg-[#EEF2F4] px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-[#5A6B72]">
+              <span className="rounded-md bg-[#e2e8f0] px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-[#3d4152]">
                 out of domain
               </span>
             ) : (
@@ -272,9 +272,9 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
 
       {/* Skeptic check */}
       {hero?.skeptic && hero.skeptic.length > 0 && (
-        <div className="border-t border-line bg-[#FBF6EE]/60 px-6 py-5">
+        <div className="border-t border-line bg-[#fefce8]/60 px-6 py-5">
           <div className="flex items-center gap-2">
-            <svg viewBox="0 0 24 24" className="h-4 w-4 text-hold" fill="none">
+            <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#a16207]" fill="none">
               <path d="M12 3 2 20h20L12 3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
               <path d="M12 10v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
               <circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="currentColor" />
@@ -324,7 +324,7 @@ function GoMemo({ hero }: { hero: HeroContent }) {
   return (
     <div>
       <div className="flex items-center gap-2">
-        <span className="rounded-md bg-teal-50 px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-teal-700">
+        <span className="rounded-md bg-brand-50 px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-700">
           Go / no-go memo
         </span>
         <span className="text-[12px] text-muted">the decision, not just the score</span>
@@ -359,8 +359,8 @@ function MemoCell({
   footer?: string;
 }) {
   const tones: Record<string, string> = {
-    teal: "border-l-teal-400",
-    blue: "border-l-[#2F6FE0]",
+    teal: "border-l-brand-400",
+    blue: "border-l-[#0600f9]",
     red: "border-l-nogo",
     amber: "border-l-hold",
   };
@@ -463,8 +463,8 @@ function Metric({
 }) {
   const tones: Record<string, string> = {
     ink: "text-ink",
-    teal: "text-teal-600",
-    amber: "text-hold",
+    teal: "text-brand-600",
+    amber: "text-[#a16207]",
     grey: "text-muted",
     red: "text-nogo",
   };
@@ -489,7 +489,7 @@ function ContextTab({
     <button
       onClick={onClick}
       className={`rounded-lg px-3 py-1.5 text-[12px] font-semibold transition-colors ${
-        active ? "bg-teal-500 text-white shadow-pill" : "text-muted hover:text-ink"
+        active ? "bg-brand-500 text-white shadow-pill" : "text-muted hover:text-ink"
       }`}
     >
       {label}
@@ -508,7 +508,7 @@ export function ViewHeader({
 }) {
   return (
     <div>
-      <div className="text-[12px] font-semibold uppercase tracking-[0.14em] text-teal-600">
+      <div className="text-[12px] font-semibold uppercase tracking-[0.14em] text-brand-600">
         {eyebrow}
       </div>
       <h1 className="mt-1.5 text-[27px] font-bold leading-tight text-ink">{title}</h1>

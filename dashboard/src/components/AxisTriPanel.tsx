@@ -77,15 +77,15 @@ function AxisTile({
   threshold: string;
 }) {
   const status = !available
-    ? { label: "not available", c: "#8497A0", bg: "#EEF2F4", dot: "#B6C5CB" }
+    ? { label: "not available", c: "#64748b", bg: "#e2e8f0", dot: "#94a3b8" }
     : impactful
-    ? { label: "impactful", c: "#0A6558", bg: "#E7F6F3", dot: "#0E9E8A" }
-    : { label: "below threshold", c: "#5A6B72", bg: "#EEF2F4", dot: "#8497A0" };
+    ? { label: "impactful", c: "#0600f9", bg: "#ecebfe", dot: "#0600f9" }
+    : { label: "below threshold", c: "#3d4152", bg: "#e2e8f0", dot: "#64748b" };
 
   return (
     <div
       className={`flex flex-col rounded-xl border p-3.5 ${
-        available && impactful ? "border-teal-200 bg-teal-50/40" : "border-line bg-page/60"
+        available && impactful ? "border-brand-200 bg-brand-50/40" : "border-line bg-page/60"
       }`}
     >
       <div className="flex items-center justify-between">

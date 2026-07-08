@@ -8,11 +8,11 @@ export function VariantBases({ vkey, size = 20 }: { vkey: string; size?: number 
   const alt = parts[3] ?? "";
   return (
     <span className="inline-flex items-center gap-1.5 font-mono font-bold" style={{ fontSize: size }}>
-      <span style={{ color: BASE_COLOURS[ref] ?? "#0F1E24" }}>{ref}</span>
+      <span style={{ color: BASE_COLOURS[ref] ?? "#0e0f23" }}>{ref}</span>
       <svg width="16" height="12" viewBox="0 0 16 12" className="text-faint">
         <path d="M1 6h12m0 0-4-4m4 4-4 4" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <span style={{ color: BASE_COLOURS[alt] ?? "#0F1E24" }}>{alt}</span>
+      <span style={{ color: BASE_COLOURS[alt] ?? "#0e0f23" }}>{alt}</span>
     </span>
   );
 }
@@ -40,7 +40,7 @@ export function ContributionCollapse({
       </div>
 
       <div className="mt-4 space-y-3">
-        <CollapseBar label="reference" frac={1} value={refVal} colour="#0E9E8A" />
+        <CollapseBar label="reference" frac={1} value={refVal} colour="#0600f9" />
         <CollapseBar label="alternate" frac={altFrac} value={altVal} colour="#DA4A42" />
       </div>
       <div className="mt-3 text-[11.5px] leading-snug text-muted">
@@ -90,7 +90,7 @@ export function GainMeter({ logfc, threshold }: { logfc: number; threshold: numb
     <div className="rounded-xl border border-line bg-page/60 p-4">
       <div className="flex items-baseline justify-between">
         <div className="text-[13px] font-semibold text-ink">Calibrated accessibility gain</div>
-        <div className="font-mono text-[22px] font-bold tnum text-teal-600">
+        <div className="font-mono text-[22px] font-bold tnum text-brand-600">
           +{fmtNum(logfc, 3)}
         </div>
       </div>
@@ -98,7 +98,7 @@ export function GainMeter({ logfc, threshold }: { logfc: number; threshold: numb
         log2FC on the cohort dynamic range, against the p99 high-impact threshold
       </div>
 
-      <div className="relative mt-6 h-3 w-full rounded-full bg-gradient-to-r from-teal-100 to-teal-300">
+      <div className="relative mt-6 h-3 w-full rounded-full bg-gradient-to-r from-brand-100 to-brand-300">
         {/* threshold marker */}
         <div
           className="absolute top-1/2 -translate-y-1/2"
@@ -108,7 +108,7 @@ export function GainMeter({ logfc, threshold }: { logfc: number; threshold: numb
         </div>
         {/* value marker */}
         <div className="absolute top-1/2 -translate-y-1/2" style={{ left: `${val}%` }}>
-          <div className="h-5 w-5 -translate-x-1/2 rounded-full border-[3px] border-white bg-teal-500 shadow-pill" />
+          <div className="h-5 w-5 -translate-x-1/2 rounded-full border-[3px] border-white bg-brand-500 shadow-pill" />
         </div>
       </div>
       <div className="relative mt-1 h-4 text-[10.5px] text-muted">
