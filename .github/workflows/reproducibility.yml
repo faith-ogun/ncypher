@@ -1,0 +1,58 @@
+name: reproducibility
+
+# The agentic reproducibility gate: on every push and PR, the engine unit tests run on
+# a clean machine, and Claude re-checks that the headline validation claim in the README
+# still holds and is internally consistent with the code (e.g. the go/no-go memo threshold
+# matches the calibrated boundary, no 0.5-vs-0.162 contradiction). It turns the demo's
+# "a reviewer agent verifies the number" beat into a permanent, public artifact.
+#
+# Requires (one-time, done by the maintainer): the Claude GitHub App installed on this repo,
+# and an ANTHROPIC_API_KEY repository secret (bills API credits, not the Claude Max cap).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  tests:
+    name: engine unit tests (clean machine)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: system libs for pyBigWig
+        run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
+      - name: install
+        run: pip install -r requirements.txt
+      - name: run tests
+        run: PYTHONPATH=src python -m pytest tests/ -q
+
+  claude-verify:
+    name: Claude re-verifies the headline claim
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Claude review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the reproducibility reviewer for NCypher.
+            Read README.md and src/nc_score/ (especially converge.py and validate.py).
+            Confirm, and fail with an explanation if not:
+            1. The README's headline validation numbers (progenitor caQTL AUROC ~0.69 / 7.5x
+               the base rate, context-specific) are stated consistently and not overclaimed.
+            2. The go/no-go memo's kill-criterion in converge.py quotes the SAME calibrated
+               chromatin threshold the engine promotes on (no hard-coded 0.5 vs 0.162 contradiction).
+            3. No claim of leakage guards (reverse-complement / mappability) that the code does
+               not actually implement; only the GC control is implemented.
+            Keep it terse. Post a short PASS/FAIL summary.

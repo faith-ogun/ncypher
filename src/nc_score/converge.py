@@ -13,8 +13,10 @@ Output is a go/no-go memo (mirrors the PKU demo): validate X first, the decisive
 experiment, and the kill criterion. That turns a scorer into a decision tool and
 answers Pollard's "validation is the bottleneck" directly.
 
-Thresholds here are provisional (marked PROVISIONAL) and get calibrated on Day 2
-against the 164 DAVs. They are kept in one place so calibration is a one-file edit.
+The chromatin high-impact threshold is calibrated per run (the ``chromatin_hi``
+argument; e.g. the 99th percentile of a cohort background, 0.162 for the DMG sweep)
+rather than the provisional 0.5 default, and the go/no-go memo quotes that same
+calibrated value so a HOLD kill-criterion can never contradict the engine.
 """
 
 from __future__ import annotations
@@ -121,7 +123,8 @@ def _confidence(in_domain: bool, n_available: int, agreement: float,
 
 
 def _memo(variant_id: str, promote: bool, direction: str, votes: list[AxisVote],
-          confidence: str, context: Optional[str]) -> dict:
+          confidence: str, context: Optional[str],
+          chromatin_hi: float = CHROMATIN_LOGFC_HI) -> dict:
     """The go/no-go memo: decisive experiment + kill criterion."""
     line = "  ".join(v.detail for v in votes if v.available)
     if confidence == "out-of-domain":
@@ -141,7 +144,7 @@ def _memo(variant_id: str, promote: bool, direction: str, votes: list[AxisVote],
         verdict = (f"HOLD: {variant_id} does not yet converge ({line}). "
                    "Informative disagreement, not a green light.")
         experiment = "Resolve the disagreeing axis (e.g. measure MPRA activity) before committing."
-        kill = f"Drop if chromatin |log2FC| stays < {CHROMATIN_LOGFC_HI} and constraint is absent."
+        kill = f"Drop if chromatin |log2FC| stays < {chromatin_hi:.3f} and constraint is absent."
     return {"context": context, "verdict": verdict,
             "decisive_experiment": experiment, "kill_criterion": kill}
 
@@ -172,8 +175,8 @@ def converge(
     in_domain = chromatin.context in IN_DOMAIN_CONTEXTS if chromatin.context else False
     # promote: chromatin must be impactful AND the axes must agree (>=2/3 of those
     # available), and the call must be in domain.
-    chromatin_hi = votes[0].impactful
-    promote = bool(in_domain and chromatin_hi and n_available >= 2 and agreement >= 0.66)
+    chromatin_impactful = votes[0].impactful
+    promote = bool(in_domain and chromatin_impactful and n_available >= 2 and agreement >= 0.66)
     confidence = _confidence(in_domain, n_available, agreement, chromatin.active_allele_quantile)
 
     return NCypherCall(
@@ -183,7 +186,8 @@ def converge(
         votes=votes, n_available=n_available, n_impactful=n_impactful,
         agreement=agreement, direction=chromatin.direction,
         promote=promote, confidence=confidence, in_domain=in_domain,
-        memo=_memo(chromatin.variant_id, promote, chromatin.direction, votes, confidence, chromatin.context),
+        memo=_memo(chromatin.variant_id, promote, chromatin.direction, votes, confidence,
+                   chromatin.context, chromatin_hi=chromatin_hi),
         axis_values={
             "logfc": chromatin.logfc, "jsd": chromatin.jsd,
             "active_allele_quantile": chromatin.active_allele_quantile,

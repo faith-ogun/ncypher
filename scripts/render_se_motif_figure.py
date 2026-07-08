@@ -33,8 +33,8 @@ for j, (g, col) in enumerate(feat):
     viz._draw_logo(axes[1, j], dec(asq[i]), ac[i], c, flank, "", highlight=True)
     axes[0, j].set_title(f"{g}  |  phyloP {ph:.1f}  |  {col}% collapse",
                          fontsize=9.5, loc="center", fontweight="bold", pad=8)
-    axes[0, j].text(0.02, 0.86, "reference", transform=axes[0, j].transAxes, fontsize=8, color="#54606F")
-    axes[1, j].text(0.02, 0.86, "alternate", transform=axes[1, j].transAxes, fontsize=8, color="#54606F")
+    axes[0, j].text(0.02, 0.86, "reference", transform=axes[0, j].transAxes, fontsize=8, color="#3d4152")
+    axes[1, j].text(0.02, 0.86, "alternate", transform=axes[1, j].transAxes, fontsize=8, color="#3d4152")
     if j > 0:
         axes[0, j].set_ylabel(""); axes[1, j].set_ylabel("")
     axes[1, j].set_xlabel("position relative to variant (bp)", fontsize=8)
@@ -49,5 +49,5 @@ cap = ("Real DeepSHAP over all 31 super-enhancer-resident converged variants (29
        "clean OPC-lineage grammar (NFIA / SOX10 / OLIG2) the model learned is genome-wide. NPAS3 "
        "is a validated glioma tumour suppressor.")
 fig.text(0.5, -0.02, cap, ha="center", va="top", fontsize=8.5, wrap=True, color="#0E1420")
-fig.savefig("data/figures/se_motif_readout.png", dpi=170, bbox_inches="tight", facecolor="white")
+fig.savefig("data/figures/se_motif_readout.png", dpi=170, bbox_inches="tight", facecolor="#f1f5f9")
 print("wrote data/figures/se_motif_readout.png  (4 SE-resident readouts, real DeepSHAP)")

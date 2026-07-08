@@ -50,7 +50,10 @@ dist/
 .vite/
 
 # ── Claude Code + OS/editor ──
-.claude/
+.claude/*
+!.claude/settings.json
+!.claude/hooks/
+.claude/settings.local.json
 .DS_Store
 .vscode/
 .idea/

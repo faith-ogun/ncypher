@@ -52,9 +52,9 @@ def main():
     # context-specificity figure (AUROC by context)
     import matplotlib.pyplot as plt
     fig, ax = plt.subplots(figsize=(6.4, 4.2), constrained_layout=True)
-    colors = ["#0E9E8A", "#3DD6B5", "#8A94A3", "#C2410C"]
+    colors = ["#0600f9", "#6b66ff", "#3d4152", "#eab308"]  # brand: blue / lt-blue / slate / amber
     ax.bar(range(len(df)), df.auroc, color=colors)
-    ax.axhline(0.5, ls="--", color="#8A94A3", lw=1)
+    ax.axhline(0.5, ls="--", color="#3d4152", lw=1)
     ax.set_xticks(range(len(df)))
     ax.set_xticklabels([r["set"] for _, r in df.iterrows()], fontsize=8)
     for i, r in df.iterrows():
@@ -64,7 +64,7 @@ def main():
     ax.set_title("ChromBPNet (fetal OPC/progenitor context) is context-specific:\n"
                  "best recovers progenitor caQTLs", fontsize=11, loc="left")
     ax.spines[["top", "right"]].set_visible(False)
-    fig.savefig("data/figures/caqtl_context_specificity.png", dpi=150, bbox_inches="tight")
+    fig.savefig("data/figures/caqtl_context_specificity.png", dpi=150, bbox_inches="tight", facecolor="#f1f5f9")
     print("\nwrote data/figures/caqtl_context_specificity.png and data/mpra/caqtl_validation.tsv")
 
 
