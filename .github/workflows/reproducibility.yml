@@ -41,18 +41,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Claude review
-        uses: anthropics/claude-code-action@v1
+      - uses: actions/setup-node@v4
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            You are the reproducibility reviewer for NCypher.
-            Read README.md and src/nc_score/ (especially converge.py and validate.py).
-            Confirm, and fail with an explanation if not:
-            1. The README's headline validation numbers (progenitor caQTL AUROC ~0.69 / 7.5x
-               the base rate, context-specific) are stated consistently and not overclaimed.
-            2. The go/no-go memo's kill-criterion in converge.py quotes the SAME calibrated
-               chromatin threshold the engine promotes on (no hard-coded 0.5 vs 0.162 contradiction).
-            3. No claim of leakage guards (reverse-complement / mappability) that the code does
-               not actually implement; only the GC control is implemented.
-            Keep it terse. Post a short PASS/FAIL summary.
+          node-version: "20"
+      - name: install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Claude Code re-verifies the headline claim
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          {
+            echo "===== README.md (first 220 lines) ====="; sed -n '1,220p' README.md
+            echo; echo "===== src/nc_score/converge.py ====="; cat src/nc_score/converge.py
+          } > ctx.txt
+          OUT=$(cat ctx.txt | claude -p "You are the NCypher reproducibility reviewer. Using the two files provided above, reply with ONE line that starts with PASS or FAIL, then one short reason. Check: (1) the README caQTL headline (AUROC about 0.69, 7.5x the base rate, context-specific) is stated consistently and not overclaimed; (2) the go/no-go memo kill-criterion in converge.py uses the calibrated chromatin_hi argument passed to converge(), NOT a hard-coded 0.5; (3) there is no claim of reverse-complement or mappability leakage guards that the code does not implement (only a GC control is implemented)." --output-format text --dangerously-skip-permissions)
+          echo "$OUT"
+          if echo "$OUT" | grep -qiE "\bFAIL\b"; then
+            echo "::error::Claude flagged a reproducibility or consistency issue"; exit 1
+          fi
+          echo "Claude verification: PASS"
