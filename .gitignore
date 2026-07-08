@@ -1,0 +1,56 @@
+# NCypher .gitignore
+# Principle: commit ONLY code needed to run/reproduce the project.
+# Everything else (data, secrets, metadata, docs, articles, video) stays local.
+
+# ── Secrets & tokens — NEVER commit ──
+other/
+*.rtf
+.env
+*.pem
+*.key
+*token*
+*secret*
+
+# ── Large data & models — fetched, not committed ──
+data/
+models/
+*.h5
+*.pt
+*.ckpt
+*.npz
+*.bigWig
+*.bw
+*.fa
+*.fasta
+*.fai
+
+# ── Local-only: planning, docs, audit trail, metadata ──
+docs/
+CLAUDE.md
+TODO.md
+MEMORY.md
+pmc.html
+
+# ── Local-only: source articles (PDFs) and the rendered video project ──
+articles/
+video/
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+.pytest_cache/
+
+# ── Node / build output ──
+node_modules/
+dist/
+.vite/
+
+# ── Claude Code + OS/editor ──
+.claude/
+.DS_Store
+.vscode/
+.idea/

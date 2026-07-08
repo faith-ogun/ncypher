@@ -1,0 +1,25 @@
+# NCypher — local product-surface environment (Python 3.10).
+# The heavy TensorFlow / ChromBPNet stack does NOT live here; it runs on Modal
+# (see modal/score_variants.py, which pins its own image). This file is
+# everything that runs on the Mac: the constraint axis, the genome accessor,
+# saliency rendering, the MCP tool, and the analysis notebooks.
+# Pins are the versions verified working on 2026-07-07 (arm64, Python 3.10.16).
+
+# core numerics / data
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+
+# genomics IO
+pyfaidx==0.9.0.4     # hg38 window extraction
+pyBigWig==0.3.25     # Zoonomia phyloP (remote bigWig, no 9 GB download)
+requests==2.34.2
+
+# saliency + figures
+matplotlib==3.10.9
+logomaker==0.8.7     # ref-vs-alt sequence logos
+
+# ChromBPNet inference is orchestrated remotely; install and authenticate with:
+#   pip install modal && modal token new
+# modal is intentionally left unpinned / optional for the local analysis stack.
