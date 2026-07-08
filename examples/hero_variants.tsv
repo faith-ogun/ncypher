@@ -1,0 +1,5 @@
+variant_id	chrom	pos	ref	alt	gene	category	context	mechanism	note
+TERT_C228T	chr5	1295113	G	A	TERT	promoter	developing_brain	de novo GGAA ETS motif; recruits GABPA to switch on telomerase	Universal regulatory-SNV exemplar. C>T on TERT sense strand = G>A on hg38 forward ref. c.-124. Common in H3-wildtype pHGG, rare in canonical K27M DMG (state honestly).
+TERT_C250T	chr5	1295135	G	A	TERT	promoter	developing_brain	de novo GGAA ETS motif; same GABPA/ETS gain-of-motif	Paired second variant, same mechanism. c.-146.
+PDGFRA_SE_demo	chr4	54229097	N	N	PDGFRA	super_enhancer	developing_brain	OPC-lineage TF motif (OLIG2 / SOX10) in the DMG-reactivated PDGFRA super-enhancer	PLACEHOLDER coords (PDGFRA TSS region). Replace ref/alt/pos with a real cohort SNV that lands in the Nagaraja PDGFRA SE. DMG-native hero.
+BRCA_OOD_demo	chr17	43044295	N	N	BRCA1	out_of_domain	breast	n/a — deliberately out of domain	PLACEHOLDER. Replace with a real PCAWG BRCA non-coding SNV (liftOver hg19->hg38). Fires the honesty / OOD confidence flag.
