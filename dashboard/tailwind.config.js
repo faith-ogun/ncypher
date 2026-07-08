@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         // Light theme surfaces (the builder cannot read dark UIs)
-        page: "#f1f5f9", // cream, page background
+        page: "#ffffff", // white — true page background / negative space
         card: "#ffffff", // white, elevated cards
         panel: "#e2e8f0", // cream-200, secondary panels and the sidebar
         ink: "#0e0f23", // primary text
