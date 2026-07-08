@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/ncypher-logo.png" width="460" alt="NCypher — decode the non-coding">
+  <img src="assets/ncypher-logo.png" width="460" alt="NCypher, decode the non-coding">
 </p>
 
 <p align="center"><i>decode the non-coding</i></p>
