@@ -77,10 +77,10 @@ function AxisTile({
   threshold: string;
 }) {
   const status = !available
-    ? { label: "not available", c: "#64748b", bg: "#e2e8f0", dot: "#94a3b8" }
+    ? { label: "not available", c: "#64748b", bg: "#f1f5f9", dot: "#94a3b8", bd: "rgba(14,15,35,0.12)" }
     : impactful
-    ? { label: "impactful", c: "#0600f9", bg: "#ecebfe", dot: "#0600f9" }
-    : { label: "below threshold", c: "#3d4152", bg: "#e2e8f0", dot: "#64748b" };
+    ? { label: "impactful", c: "#0600f9", bg: "#ecebfe", dot: "#0600f9", bd: "#bab4fd" }
+    : { label: "below threshold", c: "#3d4152", bg: "#f1f5f9", dot: "#64748b", bd: "rgba(14,15,35,0.12)" };
 
   return (
     <div
@@ -93,8 +93,8 @@ function AxisTile({
           {n}
         </span>
         <span
-          className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10.5px] font-semibold"
-          style={{ color: status.c, backgroundColor: status.bg }}
+          className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10.5px] font-semibold"
+          style={{ color: status.c, backgroundColor: status.bg, borderColor: status.bd }}
         >
           <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: status.dot }} />
           {status.label}

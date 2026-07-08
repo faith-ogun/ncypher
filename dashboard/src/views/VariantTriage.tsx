@@ -188,7 +188,7 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
           <StatusPill verdict={verdict} size="lg" />
           <div className="flex items-center gap-2">
             {ood ? (
-              <span className="rounded-md bg-[#e2e8f0] px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-[#3d4152]">
+              <span className="rounded-md border border-[#0e0f231f] bg-[#f1f5f9] px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-[#3d4152]">
                 out of domain
               </span>
             ) : (

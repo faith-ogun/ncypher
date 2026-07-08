@@ -31,16 +31,16 @@ export function StatusPill({
 
 export function ConfidenceBadge({ tier }: { tier: string }) {
   const t = tier.toUpperCase();
-  const map: Record<string, { c: string; bg: string }> = {
-    HIGH: { c: "#0600f9", bg: "#ecebfe" },
-    MEDIUM: { c: "#a16207", bg: "#fef9c3" },
-    LOW: { c: "#3d4152", bg: "#e2e8f0" },
+  const map: Record<string, { c: string; bg: string; bd: string }> = {
+    HIGH: { c: "#0600f9", bg: "#ecebfe", bd: "#bab4fd" },
+    MEDIUM: { c: "#a16207", bg: "#fef9c3", bd: "#fde68a" },
+    LOW: { c: "#3d4152", bg: "#f1f5f9", bd: "rgba(14,15,35,0.12)" },
   };
   const s = map[t] ?? map.LOW;
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide"
-      style={{ color: s.c, backgroundColor: s.bg }}
+      className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide"
+      style={{ color: s.c, backgroundColor: s.bg, borderColor: s.bd }}
     >
       {t} confidence
     </span>

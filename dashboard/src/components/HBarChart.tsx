@@ -17,10 +17,10 @@ const BAR_TONES: Record<string, string> = {
   blue: "#0600f9",
 };
 
-const ANN_TONES: Record<string, { c: string; bg: string }> = {
-  strong: { c: "#0600f9", bg: "#ecebfe" },
-  nominal: { c: "#a16207", bg: "#fef9c3" },
-  ns: { c: "#3d4152", bg: "#e2e8f0" },
+const ANN_TONES: Record<string, { c: string; bg: string; bd: string }> = {
+  strong: { c: "#0600f9", bg: "#ecebfe", bd: "#bab4fd" },
+  nominal: { c: "#a16207", bg: "#fef9c3", bd: "#fde68a" },
+  ns: { c: "#3d4152", bg: "#f1f5f9", bd: "rgba(14,15,35,0.12)" },
 };
 
 export function HBarChart({
@@ -75,8 +75,8 @@ export function HBarChart({
                   </div>
                   {r.annotation && ann && (
                     <span
-                      className="shrink-0 rounded-md px-1.5 py-0.5 font-mono text-[11px] font-semibold"
-                      style={{ color: ann.c, backgroundColor: ann.bg }}
+                      className="shrink-0 rounded-md border px-1.5 py-0.5 font-mono text-[11px] font-semibold"
+                      style={{ color: ann.c, backgroundColor: ann.bg, borderColor: ann.bd }}
                     >
                       {r.annotation}
                     </span>

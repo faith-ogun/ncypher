@@ -7,7 +7,7 @@ export default {
         // Light theme surfaces (the builder cannot read dark UIs)
         page: "#ffffff", // white — true page background / negative space
         card: "#ffffff", // white, elevated cards
-        panel: "#e2e8f0", // cream-200, secondary panels and the sidebar
+        panel: "#f1f5f9", // slate mist, secondary panels and the sidebar
         ink: "#0e0f23", // primary text
         ink800: "#16172f", // elevated dark surface
         muted: "#3d4152", // slate, secondary text
