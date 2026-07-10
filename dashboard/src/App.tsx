@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sidebar, type ViewId } from "./components/Sidebar";
 import { VariantTriage } from "./views/VariantTriage";
 import { TheFinding } from "./views/TheFinding";
@@ -14,12 +14,18 @@ function viewFromHash(): ViewId {
 
 export default function App() {
   const [view, setView] = useState<ViewId>(viewFromHash());
+  const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onHash = () => setView(viewFromHash());
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
+
+  // Reset scroll to the top of the pane whenever the tab changes.
+  useEffect(() => {
+    mainRef.current?.scrollTo({ top: 0 });
+  }, [view]);
 
   function navigate(v: ViewId) {
     setView(v);
@@ -29,7 +35,7 @@ export default function App() {
   return (
     <div className="flex h-screen w-full overflow-hidden bg-page text-ink">
       <Sidebar view={view} setView={navigate} />
-      <main className="flex-1 overflow-y-auto">
+      <main ref={mainRef} className="flex-1 overflow-y-auto">
         {view === "triage" && <VariantTriage />}
         {view === "finding" && <TheFinding />}
         {view === "validation" && <Validation />}
@@ -53,13 +59,17 @@ function GuardrailFooter() {
             />
           </svg>
           <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-faint">
-            Honesty guardrails · the bright-line "do not say" list
+            Honesty, stated plainly · the limits we hold to
           </span>
         </div>
         <div className="mt-3 grid grid-cols-1 gap-x-8 gap-y-2 md:grid-cols-2">
           {GUARDRAILS.map((g, i) => (
             <div key={i} className="flex gap-2.5 text-[12px] leading-snug text-muted">
-              <span className="mt-[3px] font-mono text-[11px] font-bold text-nogo">x</span>
+              <span className="mt-[2px] shrink-0 text-brand-500">
+                <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m4 10 4 4 8-9" />
+                </svg>
+              </span>
               <span>{g}</span>
             </div>
           ))}

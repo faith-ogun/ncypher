@@ -1,5 +1,6 @@
 import { BASE_COLOURS, fmtNum } from "../lib/format";
 import type { HeroContent, SweepRow } from "../types";
+import { ExpandableImage } from "./Lightbox";
 
 /** ref -> alt substitution rendered in the fixed DNA base colours. */
 export function VariantBases({ vkey, size = 20 }: { vkey: string; size?: number }) {
@@ -131,7 +132,7 @@ export function SaliencyView({ hero, row }: { hero: HeroContent; row: SweepRow }
   if (hero.saliencyKind === "deepshap" && hero.saliencyImage) {
     return (
       <figure className="overflow-hidden rounded-xl border border-line bg-white">
-        <img
+        <ExpandableImage
           src={hero.saliencyImage}
           alt={`Ref vs alt DeepSHAP saliency logo for ${hero.gene} ${hero.key}`}
           className="w-full"

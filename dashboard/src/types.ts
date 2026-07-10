@@ -88,7 +88,57 @@ export interface Npas3 {
   variants: Npas3Variant[];
 }
 
+export interface SuperEnhancerAxis {
+  axis: string;
+  inSe: string;
+  outSe: string;
+  test: string;
+  verdict: "null" | "positive";
+}
+
+export interface SuperEnhancer {
+  n_variants_in_se: number;
+  n_se_variants_total: number;
+  n_se: number;
+  union_mb: number;
+  axes: SuperEnhancerAxis[];
+  bootstrapDelta: number;
+  bootstrapCi: [number, number];
+  gcNull: [number, number];
+  nShortlist: number;
+  shortlistLead: string;
+  shortlistLeadPhylop: number;
+  shortlistOthers: string[];
+  motifHits: { gene: string; collapse: number }[];
+  motifFrac: string;
+  figure: string;
+  confoundTest?: {
+    verdict: string;
+    permP: string;
+    adjustedMedian: number;
+    adjustedCi: [number, number];
+    note: string;
+  };
+  crossCheck?: {
+    directionAgreement: string;
+    confirmed: string[];
+    npas3Downgraded: boolean;
+    note: string;
+  };
+  axisDecomp?: {
+    correlation: string;
+    verdict: string;
+    note: string;
+  };
+  targetLinking?: {
+    reassignment: string;
+    verdict: string;
+    note: string;
+  };
+}
+
 export interface Finding {
+  superEnhancer: SuperEnhancer;
   axisDecomposition: AxisDecompRow[];
   baseRate: number;
   convergedGenes: string[];

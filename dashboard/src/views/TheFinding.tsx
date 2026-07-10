@@ -1,7 +1,8 @@
 import data from "../data/ncypher.json";
-import type { NCypherData } from "../types";
+import type { NCypherData, SuperEnhancer } from "../types";
 import { THERAPY_AXES } from "../data/content";
 import { Card, SectionLabel, Tag, Stat } from "../components/ui";
+import { ExpandableImage } from "../components/Lightbox";
 import { HBarChart, type HBarRow } from "../components/HBarChart";
 import { ViewHeader } from "./VariantTriage";
 import { fmtP, fmtNum, fmtSigned } from "../lib/format";
@@ -38,6 +39,9 @@ export function TheFinding() {
         <StatCard value={String(c.n_recurrent_converged)} label="Recurrent among converged" sub="each private, one patient" tone="amber" />
         <StatCard value={String(c.n_driver_genes)} label="In canonical DMG drivers" sub="the coding story is solved" tone="amber" />
       </div>
+
+      {/* The flagship: K27M super-enhancer finding */}
+      <SuperEnhancerSection se={f.superEnhancer} />
 
       {/* Axis decomposition chart */}
       <Card className="mt-6 p-6">
@@ -230,6 +234,182 @@ export function TheFinding() {
         </Card>
       </div>
     </div>
+  );
+}
+
+function SuperEnhancerSection({ se }: { se: SuperEnhancer }) {
+  return (
+    <Card className="mt-6 overflow-hidden">
+      <div className="border-b border-line bg-brand-50/40 px-6 py-4">
+        <div className="flex items-center gap-2.5">
+          <SectionLabel>The flagship</SectionLabel>
+          <Tag tone="teal">fuses all three home-field resources</Tag>
+        </div>
+        <h2 className="mt-1.5 max-w-3xl text-[19px] font-bold leading-snug text-ink">
+          H3K27M's super-enhancer addiction is anchored on the developing brain's more conserved OPC
+          regulatory sequence.
+        </h2>
+        <p className="mt-1 max-w-3xl text-[13px] leading-relaxed text-muted">
+          The somatic variants that land there are not the drivers; the conserved regulatory landscape
+          they mark is the point. The BET / CDK7 drug target, read against Zoonomia constraint and the
+          Nagaraja super-enhancers.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 px-6 py-5 lg:grid-cols-[1.15fr_1fr]">
+        {/* Two-sided result */}
+        <div>
+          <SectionLabel>Two-sided and honest: in-SE vs out-SE (both OPC-accessible)</SectionLabel>
+          <p className="mt-1.5 text-[12.5px] leading-snug text-muted">
+            {se.n_variants_in_se.toLocaleString("en-GB")} of{" "}
+            {se.n_se_variants_total.toLocaleString("en-GB")} scored variants fall inside the{" "}
+            {se.n_se.toLocaleString("en-GB")} DIPG super-enhancers ({se.union_mb} Mb). Super-enhancer
+            membership is the only contrast.
+          </p>
+          <div className="mt-3 overflow-x-auto">
+            <table className="w-full border-collapse text-[12.5px]">
+              <thead>
+                <tr className="border-b border-line text-left text-[11px] uppercase tracking-wide text-faint">
+                  <th className="py-2 pr-3 font-semibold">Axis</th>
+                  <th className="py-2 pr-3 text-right font-semibold">in-SE</th>
+                  <th className="py-2 pr-3 text-right font-semibold">out-SE</th>
+                  <th className="py-2 pr-3 font-semibold">Test</th>
+                  <th className="py-2 font-semibold">Verdict</th>
+                </tr>
+              </thead>
+              <tbody>
+                {se.axes.map((a) => (
+                  <tr key={a.axis} className="border-b border-line/70">
+                    <td className="py-2 pr-3 text-ink">{a.axis}</td>
+                    <td className="py-2 pr-3 text-right font-mono tnum text-ink">{a.inSe}</td>
+                    <td className="py-2 pr-3 text-right font-mono tnum text-muted">{a.outSe}</td>
+                    <td className="py-2 pr-3 font-mono text-[11.5px] text-muted">{a.test}</td>
+                    <td className="py-2">
+                      {a.verdict === "positive" ? (
+                        <Tag tone="teal">positive</Tag>
+                      ) : (
+                        <Tag>null</Tag>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <ReadCell
+              tone="grey"
+              head="Somatic variants do not drive them"
+              body="Convergence and chromatin-impact are flat inside vs outside. This kills the naive 'somatic variants create the addiction' story, exactly what an epigenetic disease predicts."
+            />
+            <ReadCell
+              tone="teal"
+              head="They sit on more conserved sequence"
+              body={`Robust: survives a class-matched and a class x GC-decile permutation (both p < 0.001; GC null ${se.gcNull[0]} to ${se.gcNull[1]}); bootstrap median-phyloP diff +${se.bootstrapDelta} [${se.bootstrapCi[0]}, ${se.bootstrapCi[1]}] excludes 0; genic, not intergenic.`}
+            />
+          </div>
+        </div>
+
+        {/* Mechanism figure + shortlist */}
+        <div className="space-y-4">
+          <div>
+            <SectionLabel>Mechanism readout (honest)</SectionLabel>
+            <ExpandableImage
+              src={se.figure}
+              alt="Super-enhancer-resident DeepSHAP motif readout"
+              className="w-full"
+              wrapClassName="mt-2 overflow-hidden rounded-xl border border-line bg-white"
+            />
+            <p className="mt-2 text-[12px] leading-snug text-muted">
+              Real DeepSHAP over the {se.nShortlist} SE-resident hits: {se.motifFrac}, and those are
+              generic regulatory motifs, not OPC-master TFs. Coherent with the chromatin-axis null:
+              motif disruption is a chromatin-read phenomenon, so its weakness here confirms the signal
+              is constraint, not somatic disruption.
+            </p>
+          </div>
+          <div className="rounded-xl border border-brand-200 bg-brand-50/60 p-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[13.5px] font-bold text-ink">{se.shortlistLead}</span>
+              <Tag tone="teal">NCypher's top nomination</Tag>
+              {se.crossCheck?.npas3Downgraded && <Tag tone="amber">not cross-confirmed</Tag>}
+              <span className="text-[11.5px] text-muted">phyloP {se.shortlistLeadPhylop}</span>
+            </div>
+            <p className="mt-1.5 text-[12.5px] leading-snug text-ink/90">
+              NCypher's lead among the {se.nShortlist} converged variants inside the super-enhancers,
+              with {se.shortlistOthers.join(", ")} and others, on the BET / CDK7 / HDAC-addicted
+              landscape.
+              {se.crossCheck && (
+                <>
+                  {" "}
+                  <span className="font-semibold">A5 honesty update:</span> the independent AlphaGenome
+                  cross-check does not corroborate NPAS3, so it is a{" "}
+                  <span className="font-semibold">top nomination, not a cross-confirmed hit</span> — a
+                  priority to test precisely because the evidence is split. Best cross-confirmed:{" "}
+                  {se.crossCheck.confirmed.join(", ")}.
+                </>
+              )}
+            </p>
+            <div className="mt-2.5 flex flex-wrap gap-1.5">
+              {se.motifHits.map((m) => (
+                <span
+                  key={m.gene}
+                  className="rounded-md border border-line bg-card px-2 py-1 font-mono text-[11px] text-ink"
+                >
+                  {m.gene} {Math.round(m.collapse * 100)}%
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* External hardening: A2 (confound) + A5 (AlphaGenome) */}
+        {(se.confoundTest || se.crossCheck || se.axisDecomp || se.targetLinking) && (
+          <div className="mt-6 border-t border-line pt-5">
+            <SectionLabel>External hardening (Claude Science): A2 + A5 + A7 + A9</SectionLabel>
+            <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+              {se.confoundTest && (
+                <div className="rounded-xl border border-brand-200 bg-brand-50/50 p-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[12.5px] font-bold text-ink">A2 · confound stress test</span>
+                    <Tag tone="teal">{se.confoundTest.verdict}</Tag>
+                  </div>
+                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.confoundTest.note}</p>
+                </div>
+              )}
+              {se.crossCheck && (
+                <div className="rounded-xl border border-[#fde68a] bg-[#fefce8]/60 p-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[12.5px] font-bold text-ink">A5 · AlphaGenome cross-check</span>
+                    <Tag tone="teal">direction {se.crossCheck.directionAgreement}</Tag>
+                    <Tag tone="amber">partial</Tag>
+                  </div>
+                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.crossCheck.note}</p>
+                </div>
+              )}
+              {se.axisDecomp && (
+                <div className="rounded-xl border border-brand-200 bg-brand-50/50 p-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[12.5px] font-bold text-ink">A7 · axis decomposition</span>
+                    <Tag tone="teal">rho = {se.axisDecomp.correlation}</Tag>
+                  </div>
+                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.axisDecomp.note}</p>
+                </div>
+              )}
+              {se.targetLinking && (
+                <div className="rounded-xl border border-[#fde68a] bg-[#fefce8]/60 p-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[12.5px] font-bold text-ink">A9 · target-gene linking</span>
+                    <Tag tone="teal">{se.targetLinking.reassignment}</Tag>
+                    <Tag tone="amber">resource</Tag>
+                  </div>
+                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.targetLinking.note}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </Card>
   );
 }
 
