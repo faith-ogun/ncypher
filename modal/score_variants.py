@@ -45,6 +45,12 @@ CONTEXTS = {
     "oligo_ipc": "trevino_2021.c10",  # oligodendrocyte intermediate progenitor
     "early_rg": "trevino_2021.c11",   # early radial glia
     "late_rg": "trevino_2021.c9",     # late radial glia
+    # A3 multi-context specificity: a NON-NEURAL control (off-lineage; the signal
+    # should be null/weak here). Confirm the exact study.cluster before running:
+    #   modal run modal/score_variants.py::lssyn --syn-id syn64713927 --depth 2
+    # then set the value to a fetal-heart study/cluster from the same deposition
+    # (or a public ENCODE K562 ChromBPNet, noting the cross-deposition caveat).
+    "heart_control": "domcke_2020.fetal_heart.Cardiomyocytes",  # non-neural off-lineage control (A3)
 }
 DEFAULT_CONTEXT = "opc"
 
@@ -66,7 +72,7 @@ VOL_MNT = pathlib.Path("/vol")
 VARIANT_SCORER_DIR = "/opt/variant-scorer"
 
 image = (
-    modal.Image.debian_slim(python_version="3.10")
+    modal.Image.debian_slim(python_version="3.11")
     # bedtools binary backs pybedtools; build-essential/headers let pybedtools
     # compile its C++ extension (no manylinux wheel for this version).
     .apt_install("git", "wget", "bedtools", "build-essential", "python3-dev", "zlib1g-dev")
@@ -100,6 +106,17 @@ image = (
         "for f in glob.glob(os.path.join(root, '**', '*.py'), recursive=True):\n"
         "    s = open(f).read()\n"
         "    s2 = re.sub(r'np\\.(object|bool|int|float|str|complex)\\b', r'\\1', s)\n"
+        "    if s2 != s: open(f, 'w').write(s2)\n"
+        "PY",
+        # kundajelab-shap's force.py does `from IPython.core.display import display,
+        # HTML`, which newer IPython (resolved under python 3.11) removed; the symbols
+        # live in IPython.display now. Rewrite the import so `import shap` succeeds.
+        "python - <<'PY'\n"
+        "import os, glob, sysconfig\n"
+        "sp = sysconfig.get_paths()['purelib']\n"
+        "for f in glob.glob(os.path.join(sp, 'shap', '**', '*.py'), recursive=True):\n"
+        "    s = open(f).read()\n"
+        "    s2 = s.replace('from IPython.core.display import', 'from IPython.display import')\n"
         "    if s2 != s: open(f, 'w').write(s2)\n"
         "PY",
     )
@@ -665,6 +682,171 @@ def shap_to_volume(tsv_bytes: bytes, out_name: str, context: str = DEFAULT_CONTE
     return {"path": str(dest), "bytes": len(data)}
 
 
+@app.function(
+    volumes={VOL_MNT: VOL},
+    secrets=[modal.Secret.from_name("synapse-auth")],
+    timeout=6 * 60 * 60,
+    memory=16384,
+    cpu=4.0,
+)
+def contribs_peaks_run(bed_bytes: bytes, context: str = DEFAULT_CONTEXT) -> bytes:
+    """Thin Modal wrapper around _contribs_peaks_impl (kept for the small-N path)."""
+    return _contribs_peaks_impl(bed_bytes, context)
+
+
+def _contribs_peaks_impl(bed_bytes: bytes, context: str = DEFAULT_CONTEXT) -> bytes:
+    """A4: DeepSHAP contribution scores over PEAK REGIONS, for TF-MoDISco.
+
+    Reuses the kundajelab variant-scorer's variant_shap.py by treating each peak
+    window as a pseudo-variant at its centre (ref = the genomic base, alt = a
+    different base). The REF-side per-base contribution over the 2114 bp window is
+    exactly the region contribution TF-MoDISco needs; the alt side is discarded.
+
+    Returns a compressed .npz with:
+      seqs         (N, 4, L)  one-hot reference sequence
+      hyp_contribs (N, 4, L)  per-base DeepSHAP contribution (projected)
+      names        (N,)       peak names
+
+    VERIFY ON A LIVE MODAL RUN (two points a real run must confirm, then adjust):
+      1. Contribution type. TF-MoDISco wants HYPOTHETICAL contributions. This saves
+         projected_shap.seq (projected onto the present base). If variant_shap's h5
+         also exposes a hypothetical key, prefer it; else a chrombpnet
+         `contribs_bw --hyp` pass is the clean upgrade. modisco-lite runs on this
+         either way; hypothetical just sharpens the motifs.
+      2. Array orientation. This saves (N, 4, L). Confirm modisco-lite wants
+         (N, 4, L) and not (N, L, 4) for the deposited version, and transpose if so.
+    """
+    import io
+    import subprocess
+    import tempfile
+
+    import numpy as np
+    import pyfaidx
+
+    syn = _synapse_login()
+    model = _find_model_h5(syn, CONTEXTS[context])
+    fa_path = VOL_MNT / "genome" / "hg38.analysisSet.fa"
+    sizes = VOL_MNT / "genome" / "hg38.chrom.sizes"
+    fa = pyfaidx.Fasta(str(fa_path))
+
+    # peak-window BED -> chrombpnet-schema pseudo-variant TSV (one per centre)
+    lines = []
+    for raw in bed_bytes.decode().splitlines():
+        if not raw.strip():
+            continue
+        c = raw.split("\t")
+        chrom, ws, we = c[0], int(c[1]), int(c[2])
+        name = c[3] if len(c) > 3 else f"{chrom}:{ws}"
+        centre = (ws + we) // 2
+        try:
+            ref = fa[chrom][centre].seq.upper()
+        except Exception:
+            continue
+        if ref not in "ACGT":
+            continue
+        alt = "A" if ref != "A" else "C"
+        lines.append(f"{chrom}\t{centre}\t{ref}\t{alt}\t{name}")
+
+    workdir = pathlib.Path(tempfile.mkdtemp())
+    (workdir / "peaks.tsv").write_text("\n".join(lines) + "\n")
+    out_prefix = workdir / "a4"
+
+    cmd = [
+        "python", f"{VARIANT_SCORER_DIR}/src/variant_shap.py",
+        "--list", str(workdir / "peaks.tsv"), "--genome", str(fa_path),
+        "--model", model, "--chrom_sizes", str(sizes),
+        "--out_prefix", str(out_prefix), "--schema", "chrombpnet",
+        "--batch_size", "64",  # small batch keeps peak RAM low (fits 16 GiB); CPU time unchanged
+    ]
+    proc = subprocess.run(cmd, cwd=f"{VARIANT_SCORER_DIR}/src", capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise RuntimeError(
+            "variant_shap.py failed\n"
+            f"--- STDERR (tail) ---\n{proc.stderr[-4000:]}"
+        )
+
+    import deepdish as dd
+
+    d = dd.io.load(str(out_prefix) + ".variant_shap.counts.h5")
+    proj = np.asarray(d["projected_shap"]["seq"], dtype=np.float32)  # (2N, 4, L)
+    raw_oh = np.asarray(d["raw"]["seq"], dtype=np.int8)              # (2N, 4, L)
+    alleles = np.asarray(d["alleles"]).astype(int)
+    ids = np.asarray(d["variant_ids"]).astype(str)
+
+    ref_rows = np.where(alleles == 0)[0]  # keep the reference-sequence side only
+    seqs = raw_oh[ref_rows]      # (N, 4, L)
+    hyp = proj[ref_rows]         # (N, 4, L)
+    names = ids[ref_rows]
+
+    buf = io.BytesIO()
+    np.savez_compressed(buf, seqs=seqs, hyp_contribs=hyp, names=names)
+    return buf.getvalue()
+
+
+@app.function(
+    volumes={VOL_MNT: VOL},
+    secrets=[modal.Secret.from_name("synapse-auth")],
+    timeout=6 * 60 * 60,
+    memory=16384,
+    cpu=4.0,
+)
+def contribs_peaks_to_volume(bed_bytes: bytes, out_name: str, context: str = DEFAULT_CONTEXT) -> dict:
+    """Detach-safe A4 contributions: compute and WRITE the tfmodisco .npz to the
+    volume (/vol/results/<out_name>) so a disconnected client cannot lose the
+    compute. Retrieve with fetch_result."""
+    data = _contribs_peaks_impl(bed_bytes, context)
+    dest = VOL_MNT / "results" / out_name
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(data)
+    VOL.commit()
+    return {"path": str(dest), "bytes": len(data)}
+
+
+@app.function(volumes={VOL_MNT: VOL}, timeout=8 * 60 * 60)
+def contribs_peaks_orchestrate(bed_bytes: bytes, n_chunks: int = 16,
+                               out_name: str = "a4_c15_contribs.npz",
+                               context: str = DEFAULT_CONTEXT) -> dict:
+    """A4 detach-safe genome-wide contributions: split the peak BED into
+    ``n_chunks``, fan the per-chunk DeepSHAP across containers with Modal's
+    server-side ``.map`` (independent of the client connection), concatenate the
+    returned arrays IN A CONTAINER (data plane, not the client's blocked blob
+    proxy), and write ONE tfmodisco-ready .npz to /vol/results/<out_name>.
+
+    Retrieve the single output via the job surface (a small job that copies the
+    volume file into ./out/). This is the robust path for the 10k-peak A4 run.
+    """
+    import io
+    import math
+
+    import numpy as np
+
+    lines = [l for l in bed_bytes.decode().splitlines() if l.strip()]
+    per = math.ceil(len(lines) / n_chunks)
+    chunks = [("\n".join(lines[i * per:(i + 1) * per]) + "\n").encode()
+              for i in range(n_chunks) if lines[i * per:(i + 1) * per]]
+
+    seqs_parts, hyp_parts, name_parts = [], [], []
+    # server-side parallel map; each element is a compressed npz (bytes)
+    for data in contribs_peaks_run.map(chunks, kwargs={"context": context}):
+        d = np.load(io.BytesIO(data))
+        seqs_parts.append(d["seqs"])
+        hyp_parts.append(d["hyp_contribs"])
+        name_parts.append(d["names"])
+
+    seqs = np.concatenate(seqs_parts, axis=0)
+    hyp = np.concatenate(hyp_parts, axis=0)
+    names = np.concatenate(name_parts, axis=0)
+
+    dest = VOL_MNT / "results" / out_name
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    buf = io.BytesIO()
+    np.savez_compressed(buf, seqs=seqs, hyp_contribs=hyp, names=names)
+    dest.write_bytes(buf.getvalue())
+    VOL.commit()
+    return {"path": str(dest), "n": int(seqs.shape[0]), "bytes": dest.stat().st_size,
+            "shape": list(seqs.shape)}
+
+
 # --- local entrypoints -------------------------------------------------------
 @app.local_entrypoint()
 def prepare_all(context: str = DEFAULT_CONTEXT):
@@ -690,3 +872,16 @@ def saliency(tsv: str, context: str = DEFAULT_CONTEXT, out: str = "data/scored/n
     outp.parent.mkdir(parents=True, exist_ok=True)
     outp.write_bytes(result)
     print("wrote", outp)
+
+
+@app.local_entrypoint()
+def contribs_peaks(bed: str, context: str = DEFAULT_CONTEXT,
+                   out_name: str = "a4_c15_contribs.npz"):
+    """A4: DeepSHAP contributions over the c15 peak windows for TF-MoDISco.
+
+    Detach-safe: writes the .npz to the Modal volume, then fetch it locally:
+      modal run --detach modal/score_variants.py::contribs_peaks --bed data/dmg/enhancers/a4_c15_peaks_subset.bed --context opc
+      modal run modal/score_variants.py::fetch_result --name a4_c15_contribs.npz --out data/dmg/enhancers/a4_c15_contribs.npz
+    Run the heavy job with `modal run --detach` (30k regions of DeepSHAP take a while)."""
+    data = pathlib.Path(bed).read_bytes()
+    print(contribs_peaks_to_volume.remote(data, out_name, context))

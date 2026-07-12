@@ -1,0 +1,23 @@
+{
+ "element_mid_hg38": 33788451,
+ "element_hg19": [
+  "chr14",
+  34257657
+ ],
+ "element_bin": 3425,
+ "chrom": "chr14",
+ "N_bins": 10735,
+ "npas3_tss_hg38": 32934396,
+ "npas3_tss_hg19": [
+  "chr14",
+  33403602
+ ],
+ "npas3_bin": 3340,
+ "bin_separation": 85,
+ "contact_element_to_npas3": 13.560452111898977,
+ "dist_matched_mean": 2.4209698884301782,
+ "dist_matched_median": 1.9412062539366253,
+ "dist_matched_n": 2575,
+ "obs_over_expected": 5.601247738232687,
+ "percentile_vs_distmatched": 99.80582524271846
+}

@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "created_at": "2026-07-09T18:19:15.378Z",
+  "task_summary": "AlphaGenome second opinion on NCypher's 37 SE-resident + hero calls",
+  "agents": [],
+  "phases": [
+    {
+      "name": "Plan",
+      "delegations": [
+        {
+          "steps": [
+            {
+              "title": "Load inputs and pull live NCypher calls",
+              "description": "Load data/dmg/enhancers/a5_input.tsv (30 SE-resident + 7 hero = 37 variants; verify exact counts vs the brief's stated 31+8 and report the discrepancy). For each variant call the live NCypher connector score_variant to pull the three-axis call (chromatin logfc/high_impact, constraint phylop/constrained, converged, verdict). Read the ncypher://finding/k27m-superenhancer resource to ground which sit in the SE set. Record NCypher's chromatin call (impactful/not + direction from sign of logfc) and note every variant where the live call differs from the staged ncypher_call column. Save handoff/ncypher_calls.json."
+            },
+            {
+              "title": "Build a matched AlphaGenome background null",
+              "description": "Sample ~200 background variants at random (seeded) from the full 10,869-variant OPC-regulatory sweep (data/dmg/sweep_result.tsv), class-matched to the 37 test variants where practical. Score each on AlphaGenome ATAC+DNASE using a fixed CNS/neural track set (16 neural biosamples: brain, cortex, cerebellum, astrocyte, neural progenitor, neuronal stem cell, glutamatergic neuron, etc.). Summarise each variant to a single neural-effect statistic (max |log2FC| across neural tracks, plus signed mean). Derive the 95th-percentile magnitude as the 'impactful' threshold. Save handoff/ag_background.json and a background-distribution plot."
+            },
+            {
+              "title": "Score the 37 test variants on AlphaGenome",
+              "description": "For each of the 37 variants, run AlphaGenome score_variant on a 100kb interval with the ATAC+DNASE recommended scorers, restrict to the neural track set, and compute: max |log2FC|, signed mean neural log2FC (direction: gain/loss of accessibility), background percentile, and impactful flag (magnitude >= background p95). Keep the per-track detail for the hero variants. Handle API/coverage failures per-variant with try/except. Save handoff/ag_calls.json and results/a5_alphagenome_per_track.tsv."
+            },
+            {
+              "title": "Assemble the NCypher-vs-AlphaGenome comparison table",
+              "description": "Join NCypher and AlphaGenome calls into one per-variant table (chrom, pos, gene, NCypher: logfc/high_impact/converged/verdict; AlphaGenome: neural max|log2FC|/direction/background percentile/impactful). Classify each row as concordant (both impactful or both not) or discordant, with direction agreement noted separately. Compute the overall concordance rate on the chromatin axis, plus TERT as the named positive-control check. Save results/a5_comparison_table.tsv and a formatted results/a5_comparison_table.md."
+            },
+            {
+              "title": "Concordance figure",
+              "description": "Produce one publication-grade figure (load figure-style first): a scatter of NCypher chromatin |log2FC| (x) vs AlphaGenome neural max|log2FC| (y), points coloured by concordance, cutoffs drawn as reference lines, heroes labelled (TERT, NPAS3, SYN3, SOX2-OT, FARP1, GDPD5, IGFBP7, TLE4), plus a small confusion-matrix inset of the 2x2 impactful/not agreement. Save data/figures/a5_ncypher_vs_alphagenome.png."
+            },
+            {
+              "title": "Falsification and reviewer verification",
+              "description": "Skeptic check: test whether the concordance rate is sensitive to the threshold choice (sweep cutoffs, report concordance as a function of threshold), whether the neural-track restriction changes the call vs all-tracks, and whether AlphaGenome direction (gain/loss) agrees with NCypher's ChromBPNet sign. Independently re-derive the headline concordance number from the saved table and confirm it matches. State the honest verdict (survives/weakened/does not survive) for the claim 'AlphaGenome corroborates NCypher's chromatin call', with the explicit caveat that AlphaGenome is a generic cross-check, not ground truth and not OPC-specific. Save results/a5_concordance_report.md."
+            }
+          ]
+        }
+      ],
+      "id": "phase-0"
+    }
+  ],
+  "feasibility": {
+    "rationale": "AlphaGenome API is reachable (domain now allowlisted) and returns per-track chromatin-accessibility log2FC for brain/neural biosamples; the NCypher connector returns live three-axis calls. The main methodological care is defining 'impactful' on AlphaGenome's scale via a matched background null rather than an arbitrary cutoff, and being honest that AlphaGenome is generic (no OPC track; closest are embryonic neural progenitor / neuronal stem cell) so disagreement with the OPC-specific NCypher call is expected and informative, not a failure.",
+    "confidence": "high"
+  }
+}

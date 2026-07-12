@@ -135,6 +135,16 @@ export interface SuperEnhancer {
     verdict: string;
     note: string;
   };
+  contextTest?: {
+    verdict: string;
+    medianGap: string;
+    note: string;
+  };
+  motifRediscovery?: {
+    verdict: string;
+    soxSupport: string;
+    note: string;
+  };
 }
 
 export interface Finding {

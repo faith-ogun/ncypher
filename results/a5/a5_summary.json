@@ -1,0 +1,39 @@
+{
+  "n_variants": 38,
+  "n_se_resident": 31,
+  "n_hero": 7,
+  "ag_impactful_threshold_p95": 0.556,
+  "nc_impactful_cutoff": 0.162,
+  "binary_concordance_p95": 36.8,
+  "binary_concordant_n": 14,
+  "direction_agreement_all": 81.6,
+  "direction_agree_n": 31,
+  "spearman_rho": 0.232,
+  "spearman_p": 0.1616,
+  "nc_impactful_n": 36,
+  "of_which_ag_p95": 13,
+  "of_which_ag_p90": 22,
+  "of_which_ag_above_median": 35,
+  "se_concordance": 32.3,
+  "hero_concordance": 57.1,
+  "direction_binomial_p": 5.81e-05,
+  "threshold_sensitivity": {
+    "median": 92.1,
+    "p75": 76.3,
+    "p90": 60.5,
+    "p95": 36.8,
+    "p99": 13.2
+  },
+  "direction_agree_effect_ge_0.4": "5/6",
+  "direction_agree_effect_lt_0.4": "26/32",
+  "all_tracks_binary_concordance": 36.8,
+  "reviewer_verified": true,
+  "npas3": {
+    "nc": "loss 0.71 phyloP4.68 GO",
+    "ag": "gain 0.20 p70 sub-background"
+  },
+  "tert": {
+    "nc": "gain 0.10 below-cutoff HOLD",
+    "ag": "gain 1.06 p99 impactful"
+  }
+}

@@ -1,0 +1,13 @@
+pattern	motif_class	top_tomtom_match	tomtom_qvalue	n_seqlets	ic_total_bits	gc_content	gc_vs_bg	opc_neurodev_flag	note
+pattern_0	SOX / HMG box	SOX4 (MA0867.3)	5.03e-04	419	12.46	0.428	-0.059	YES	ACAAT HMG core; SOX family unresolvable by motif (SOX10/SOX2/SOX4/SOX13 all match). SOX10=OPC master.
+pattern_1	NFY / CCAAT	NFYA (MA0060.4)	1.09e-03	189	15.01	0.601	0.115	no	CCAAT box; ubiquitous promoter factor.
+pattern_2	CTCF insulator	CTCF (MA0139.2)	6.39e-20	173	17.03	0.688	0.201	no	Architectural insulator; ubiquitous.
+pattern_3	THAP11 / ZNF143	Thap11 (MA1573.2)	1.35e-09	173	29.69	0.562	0.076	no	Promoter/housekeeping.
+pattern_4	SOX / HMG box	SOX4 (MA0867.3)	7.48e-05	113	14.41	0.441	-0.045	YES	Second SOX HMG variant; SOX10 among matches.
+pattern_5	SOX / HMG box	SOX4 (MA0867.3)	2.47e-04	76	14.83	0.435	-0.052	YES	Third SOX HMG variant (Sox6 also matches).
+pattern_6	bHLH E-box (proneural)	OLIG2 (MA1997.2); ASCL1/NHLH1	1.23e-02	59	10.42	0.621	0.134	YES	CAGCTG E-box; matches OLIG2 q=1.2e-2, ASCL1/MYOG/NHLH1/Tcf12. MEME full-window top-hit CTCF is a flank artefact; logo is a clean E-box.
+pattern_7	NRF1 / EGR	Nrf1 (MA0506.3)	2.96e-05	57	12.09	0.69	0.203	no	NRF1 GC promoter element; EGR also matches.
+pattern_8	KLF/SP GC-box	SP2 (MA0516.3)	2.67e-06	48	21.43	0.679	0.192	no	Genuine GC-box (high GC by design); ubiquitous KLF/SP.
+pattern_9	RFX	RFX1 (MA0509.3)	9.96e-07	38	16.25	0.583	0.096	no	X-box; ciliary/neural, not OPC-specific.
+pattern_10	ETS / AP-1	ELK1::SREBF2 (MA1933.2)	1.61e-03	27	10.57	0.581	0.095	borderline	ETS (GGAA) composite; ETS present, not OPC-restricted.
+pattern_11	NFY / CCAAT	NFYA (MA0060.4)	1.19e-02	27	48.1	0.595	0.108	no	Second NFY CCAAT variant.

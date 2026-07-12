@@ -83,8 +83,8 @@ export function VariantTriage() {
               >
                 <span
                   className="h-2 w-2 rounded-full"
-                  style={{ backgroundColor: m.ring }}
-                  title={v}
+                  style={{ backgroundColor: h.kind === "control" ? "#14b8a6" : m.ring }}
+                  title={h.kind === "control" ? "Control passed" : v}
                 />
                 <span className={`font-semibold ${active ? "text-brand-700" : "text-ink"}`}>
                   {h.label}
@@ -152,6 +152,10 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
   const ood = context === "breast";
   const verdict: Verdict = ood ? "NO-GO" : row.verdict;
   const m = VERDICT_META[verdict];
+  // A positive control is judged on whether the model recovers the known
+  // mechanism from sequence, not on axis convergence. In domain it reads as a
+  // clean pass; out of domain it still falls through to the OOD guard.
+  const isControl = hero?.kind === "control" && !ood;
 
   const nAvail = row.phylop !== null ? 2 : 1;
   const nImpact = (row.high_impact ? 1 : 0) + (row.constrained ? 1 : 0);
@@ -165,7 +169,11 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
       {/* Header */}
       <div
         className="flex flex-col gap-4 rounded-t-xl2 border-b border-line px-6 py-5 sm:flex-row sm:items-center sm:justify-between"
-        style={{ background: `linear-gradient(180deg, ${m.bg}55, transparent)` }}
+        style={{
+          background: isControl
+            ? "linear-gradient(180deg, #ccfbf155, transparent)"
+            : `linear-gradient(180deg, ${m.bg}55, transparent)`,
+        }}
       >
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-3">
@@ -185,17 +193,23 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
           )}
         </div>
         <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
-          <StatusPill verdict={verdict} size="lg" />
+          {isControl ? <ControlPill size="lg" /> : <StatusPill verdict={verdict} size="lg" />}
           <div className="flex items-center gap-2">
             {ood ? (
               <span className="rounded-md border border-[#0e0f231f] bg-[#f1f5f9] px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-[#3d4152]">
                 out of domain
               </span>
+            ) : isControl ? (
+              <span className="rounded-md border border-[#99f6e4] bg-[#ccfbf1] px-2 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-[#0f766e]">
+                mechanism recovered
+              </span>
             ) : (
               <ConfidenceBadge tier={tier} />
             )}
           </div>
-          <span className="text-[12px] text-muted">{m.blurb}</span>
+          <span className="text-[12px] text-muted">
+            {isControl ? "Sanity check: the model recovers the known mechanism" : m.blurb}
+          </span>
         </div>
       </div>
 
@@ -212,15 +226,26 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
 
       {/* Convergence strip */}
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-line bg-page/50 px-6 py-3">
-        <Metric k="Axes available" v={`${nAvail} of 3`} />
-        <Metric k="Axes impactful" v={`${nImpact} of ${nAvail}`} />
-        <Metric
-          k="Agreement"
-          v={`${Math.round(agreement * 100)}%`}
-          tone={agreement >= 0.66 ? "teal" : agreement >= 0.5 ? "amber" : "grey"}
-        />
-        <Metric k="In domain" v={ood ? "no" : "yes"} tone={ood ? "red" : "teal"} />
-        <Metric k="Converged (2-axis)" v={row.converged ? "yes" : "no"} tone={row.converged ? "teal" : "grey"} />
+        {isControl ? (
+          <>
+            <Metric k="Positive control" v="passed" tone="teal" />
+            <Metric k="Mechanism recovered" v="yes" tone="teal" />
+            <Metric k="Known non-coding driver" v="yes" tone="teal" />
+            <Metric k="In domain" v="yes" tone="teal" />
+          </>
+        ) : (
+          <>
+            <Metric k="Axes available" v={`${nAvail} of 3`} />
+            <Metric k="Axes impactful" v={`${nImpact} of ${nAvail}`} />
+            <Metric
+              k="Agreement"
+              v={`${Math.round(agreement * 100)}%`}
+              tone={agreement >= 0.66 ? "teal" : agreement >= 0.5 ? "amber" : "grey"}
+            />
+            <Metric k="In domain" v={ood ? "no" : "yes"} tone={ood ? "red" : "teal"} />
+            <Metric k="Converged (2-axis)" v={row.converged ? "yes" : "no"} tone={row.converged ? "teal" : "grey"} />
+          </>
+        )}
       </div>
 
       {/* Axes */}
@@ -296,6 +321,8 @@ function TriageCard({ row, context }: { row: SweepRow; context: Context }) {
       <div className="border-t border-line px-6 py-5">
         {ood ? (
           <MemoRefused />
+        ) : isControl && hero?.holdNote ? (
+          <ControlMemo note={hero.holdNote} />
         ) : hero?.memo && verdict === "GO" ? (
           <GoMemo hero={hero} />
         ) : hero?.holdNote ? (
@@ -387,6 +414,36 @@ function HoldMemo({ verdict, note }: { verdict: Verdict; note: string }) {
         <span className="text-[12.5px] font-semibold text-ink">
           {verdict === "HOLD" ? "Resolve before bench time" : "Not promoted"}
         </span>
+      </div>
+      <p className="mt-2 text-[13px] leading-relaxed text-ink/90">{note}</p>
+    </div>
+  );
+}
+
+function ControlPill({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
+  const sizes = {
+    sm: "px-3 py-1 text-[13px]",
+    md: "px-4 py-1.5 text-[15px]",
+    lg: "px-5 py-2 text-[18px]",
+  } as const;
+  const dot = { sm: 7, md: 8, lg: 10 }[size];
+  return (
+    <span
+      className={`inline-flex items-center gap-2 rounded-full font-bold tracking-wide shadow-pill ${sizes[size]}`}
+      style={{ backgroundColor: "#ccfbf1", color: "#0f766e", boxShadow: "inset 0 0 0 1.5px #14b8a655" }}
+    >
+      <span className="inline-block rounded-full" style={{ width: dot, height: dot, backgroundColor: "#14b8a6" }} />
+      CONTROL · PASSED
+    </span>
+  );
+}
+
+function ControlMemo({ note }: { note: string }) {
+  return (
+    <div className="rounded-lg border border-[#99f6e4] bg-[#f0fdfa] px-4 py-3">
+      <div className="flex items-center gap-2">
+        <ControlPill size="sm" />
+        <span className="text-[12.5px] font-semibold text-ink">Positive control passed</span>
       </div>
       <p className="mt-2 text-[13px] leading-relaxed text-ink/90">{note}</p>
     </div>

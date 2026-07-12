@@ -1,0 +1,16 @@
+{
+  "naive_median_in": 0.283,
+  "naive_median_out": 0.185,
+  "naive_mwu_two_sided": 0.005224349721366305,
+  "perm_obs_median": 0.281,
+  "perm_null_median": 0.154,
+  "perm_p": 0.001,
+  "guard_frac_demand_from_ge5_controls": 0.971,
+  "guard_n_strata": 231,
+  "guard_min_pool": 1,
+  "ols_coef": 0.1402,
+  "ols_p": 0.01565406819168049,
+  "medreg_coef": 0.0868,
+  "medreg_p": 0.002440173277178278,
+  "n_complete": 10818
+}

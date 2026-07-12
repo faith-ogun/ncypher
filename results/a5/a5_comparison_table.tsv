@@ -1,0 +1,39 @@
+variant_id	gene	source	staged_call	nc_logfc	nc_abs_logfc	nc_dir	nc_chrom_impactful	nc_phylop	nc_constrained	nc_converged	nc_verdict	ag_neural_max_abs_l2fc	ag_direction	ag_bg_percentile	ag_signal_level	ag_impactful	concordant_chrom	dir_agree	agreement_class
+chr22-33000876-C-T	SYN3	hero	GO	-1.24	1.24	loss	True	8.58	True	True	GO	3.209	loss	100.0	strong (>p95)	True	True	True	both impactful
+chr13-98333680-C-G	FARP1	hero	GO	-1.16	1.16	loss	True	8.64	True	True	GO	0.672	loss	96.0	strong (>p95)	True	True	True	both impactful
+chr4-57055909-T-C	IGFBP7	hero	HOLD	-1.1	1.1	loss	True			False	HOLD	0.425	loss	91.5	moderate (p90-95)	False	False	True	NCypher only
+chr11-75445498-C-T	GDPD5	hero	GO	-0.91	0.91	loss	True	2.8	True	True	GO	0.723	loss	96.0	strong (>p95)	True	True	True	both impactful
+chr3-181317760-C-T	SOX2-OT	hero	GO	0.26	0.26	gain	True	3.54	True	True	GO	0.255	gain	78.5	weak (median-p90)	False	False	True	NCypher only
+chr5-1295113-G-A	TERT	hero	positive control (HOLD)	0.1	0.1	gain	False	0.13	False		HOLD	1.062	gain	99.0	strong (>p95)	True	False	True	AlphaGenome only
+chr9-79651705-C-T	TLE4	hero	NO-GO	0.0	0.0	gain	False	8.9	True	False	HOLD	0.307	gain	83.5	weak (median-p90)	False	True	True	both not
+chr14-33788719-A-G	NPAS3	se-hit	converged (SE-resident)	-0.71	0.71	loss	True	4.68	True	True	GO	0.2	gain	69.5	weak (median-p90)	False	False	False	NCypher only
+chr22-37968014-G-A	POLR2F	se-hit	converged (SE-resident)	-0.7	0.7	loss	True	8.7	True	True	GO	1.047	loss	99.0	strong (>p95)	True	True	True	both impactful
+chr22-41964348-G-A	ENSR00000672906	se-hit	converged (SE-resident)	0.37	0.37	gain	True	2.55	True	True	GO	0.15	gain	54.5	weak (median-p90)	False	False	True	NCypher only
+chr16-12252829-G-A	SNX29	se-hit	converged (SE-resident)	0.33	0.33	gain	True	3.07	True	True	GO	0.978	gain	99.0	strong (>p95)	True	True	True	both impactful
+chr7-37007541-C-G	ELMO1	se-hit	converged (SE-resident)	-0.32	0.32	loss	True	5.98	True	True	GO	0.435	loss	91.5	moderate (p90-95)	False	False	True	NCypher only
+chr11-72631936-C-A	PDE2A	se-hit	converged (SE-resident)	-0.31	0.31	loss	True	5.91	True	True	GO	0.703	loss	96.0	strong (>p95)	True	True	True	both impactful
+chr10-78176856-G-A	LOC105378374	se-hit	converged (SE-resident)	-0.31	0.31	loss	True	4.93	True	True	GO	0.947	loss	98.5	strong (>p95)	True	True	True	both impactful
+chr10-88234518-G-C	LOC101929727	se-hit	converged (SE-resident)	0.31	0.31	gain	True	3.38	True	True	GO	0.529	gain	94.0	moderate (p90-95)	False	False	True	NCypher only
+chr18-79246710-G-A	ATP9B	se-hit	converged (SE-resident)	-0.28	0.28	loss	True	4.31	True	True	GO	0.4	loss	90.0	moderate (p90-95)	False	False	True	NCypher only
+chr6-164010768-T-C	LOC105378102	se-hit	converged (SE-resident)	0.28	0.28	gain	True	2.28	True	True	GO	0.423	gain	91.0	moderate (p90-95)	False	False	True	NCypher only
+chr2-176638323-C-A	LINC01117	se-hit	converged (SE-resident)	-0.26	0.26	loss	True	8.82	True	True	GO	0.901	loss	98.5	strong (>p95)	True	True	True	both impactful
+chr3-172153482-C-G	FNDC3B	se-hit	converged (SE-resident)	-0.26	0.26	loss	True	5.79	True	True	GO	1.152	loss	99.0	strong (>p95)	True	True	True	both impactful
+chr11-36196158-G-A	LDLRAD3	se-hit	converged (SE-resident)	-0.26	0.26	loss	True	5.68	True	True	GO	0.829	loss	97.0	strong (>p95)	True	True	True	both impactful
+chr19-3397698-G-A	NFIC	se-hit	converged (SE-resident)	-0.26	0.26	loss	True	3.66	True	True	GO	0.256	loss	78.5	weak (median-p90)	False	False	True	NCypher only
+chr6-131427523-C-T	LOC105378005	se-hit	converged (SE-resident)	0.25	0.25	gain	True	2.96	True	True	GO	0.375	gain	88.5	weak (median-p90)	False	False	True	NCypher only
+chr14-54640636-G-T	SAMD4A	se-hit	converged (SE-resident)	0.23	0.23	gain	True	4.77	True	True	GO	0.346	gain	87.5	weak (median-p90)	False	False	True	NCypher only
+chr22-37968995-G-A	POLR2F	se-hit	converged (SE-resident)	-0.23	0.23	loss	True	4.14	True	True	GO	0.272	loss	79.5	weak (median-p90)	False	False	True	NCypher only
+chr14-54627947-A-G	SAMD4A	se-hit	converged (SE-resident)	0.23	0.23	gain	True	2.37	True	True	GO	0.219	gain	74.0	weak (median-p90)	False	False	True	NCypher only
+chr1-232620638-C-T	SIPA1L2	se-hit	converged (SE-resident)	-0.22	0.22	loss	True	5.02	True	True	GO	0.451	loss	92.0	moderate (p90-95)	False	False	True	NCypher only
+chr11-125235298-C-T	PKNOX2	se-hit	converged (SE-resident)	0.22	0.22	gain	True	4.02	True	True	GO	0.127	loss	51.0	weak (median-p90)	False	False	False	NCypher only
+chr14-68791314-G-A	ZFP36L1	se-hit	converged (SE-resident)	-0.22	0.22	loss	True	4.01	True	True	GO	0.125	loss	50.5	weak (median-p90)	False	False	True	NCypher only
+chr18-56067406-G-T	LINC01905	se-hit	converged (SE-resident)	0.21	0.21	gain	True	5.9	True	True	GO	0.553	loss	95.0	moderate (p90-95)	False	False	False	NCypher only
+chr17-50200666-C-T	COL1A1	se-hit	converged (SE-resident)	-0.21	0.21	loss	True	3.88	True	True	GO	0.821	loss	96.0	strong (>p95)	True	True	True	both impactful
+chr9-134438332-G-A	RXRA	se-hit	converged (SE-resident)	-0.2	0.2	loss	True	4.25	True	True	GO	0.054	gain	21.0	none (<median)	False	False	False	NCypher only
+chr15-64134492-C-T	SNX1	se-hit	converged (SE-resident)	-0.2	0.2	loss	True	3.28	True	True	GO	0.166	gain	57.5	weak (median-p90)	False	False	False	NCypher only
+chr20-32528285-C-T	NOL4L	se-hit	converged (SE-resident)	-0.19	0.19	loss	True	7.02	True	True	GO	0.233	loss	75.5	weak (median-p90)	False	False	True	NCypher only
+chr11-48104480-A-G	PTPRJ	se-hit	converged (SE-resident)	0.19	0.19	gain	True	4.6	True	True	GO	1.359	loss	99.0	strong (>p95)	True	True	False	both impactful
+chr2-196988216-G-A	ANKRD44	se-hit	converged (SE-resident)	-0.19	0.19	loss	True	2.33	True	True	GO	0.243	loss	76.5	weak (median-p90)	False	False	True	NCypher only
+chr19-13151895-C-G	IER2	se-hit	converged (SE-resident)	-0.18	0.18	loss	True	6.95	True	True	GO	0.558	loss	95.0	strong (>p95)	True	True	True	both impactful
+chr11-121742105-C-A	ENST00000652518	se-hit	converged (SE-resident)	0.18	0.18	gain	True	4.17	True	True	GO	0.46	loss	92.0	moderate (p90-95)	False	False	False	NCypher only
+chr16-17369899-C-T	XYLT1	se-hit	converged (SE-resident)	-0.17	0.17	loss	True	4.72	True	True	GO	0.415	loss	90.5	moderate (p90-95)	False	False	True	NCypher only

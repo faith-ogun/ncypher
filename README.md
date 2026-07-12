@@ -178,6 +178,20 @@ agent re-derives the headline number, and out comes the go / no-go memo.
 
 ---
 
+## The resource: a downloadable regulatory map
+
+The output others can build on lives in [`regulatory_map/`](regulatory_map/README.md): **every one of
+the 10,869 scored somatic non-coding DMG variants in a single documented, agent-queryable table**, with
+its chromatin score, evolutionary constraint, two-axis convergence verdict, model-native motif, and
+every hardening annotation (A3 cell-type specificity, A9 / A9b target gene, A5 AlphaGenome cross-check).
+Shipped as TSV + Parquet, with a 164-converged shortlist, a full [data dictionary](regulatory_map/data_dictionary.md)
+(coverage, thresholds, and the honest caveats), and a `manifest.json` of sources + checksums. It is
+served straight to agents as the MCP tool `get_regulatory_map` and the resource `ncypher://regulatory-map`, and rebuilt deterministically
+by [`scripts/build_regulatory_map.py`](scripts/build_regulatory_map.py). Nulls mean "not assessed at
+this tier", never "assessed negative"; confidence is highest where the axes and orthogonal evidence agree.
+
+---
+
 ## How it evolved
 
 NCypher was wrestled into shape, not one-shot. The two moments that matter most: we **killed our own
@@ -199,6 +213,15 @@ headline** the day it failed honestly, and the flagship result is a **two-sided 
 ---
 
 ## Reproduce
+
+**One notebook, everything:** [`notebooks/reproduce.ipynb`](notebooks/reproduce.ipynb) drives the whole downstream pipeline (raw scored tables to the headline stats and figures) and runs clean end to end (0 errors, both figures embedded):
+
+```bash
+python3.10 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt nbformat nbconvert ipykernel
+jupyter nbconvert --to notebook --execute notebooks/reproduce.ipynb    # raw -> figures
+```
+
+Or run the steps individually:
 
 ```bash
 python3.10 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
@@ -224,7 +247,8 @@ src/nc_score/   variants, genome, constraint, scoring, converge, saliency, viz, 
 modal/          ChromBPNet inference + DeepSHAP (Modal, parallel fan-out)
 mcp/  skill/    the FastMCP server + the ncypher-triage Agent Skill (the delivery layer)
 dashboard/      the React product surface
-scripts/        validate_caqtl, bootstrap_caqtl, k27m_se_analysis, k27m_se_constraint_control, ...
+regulatory_map/ the downloadable resource: 10,869 scored variants + convergence + mechanism + dictionary
+scripts/        validate_caqtl, bootstrap_caqtl, k27m_se_analysis, build_regulatory_map, ...
 tests/          engine unit tests
 assets/         README media (logo, motion GIFs, result figures)
 ```
@@ -255,6 +279,7 @@ assets/         README media (logo, motion GIFs, result figures)
 | [`mcp/README.md`](mcp/README.md) | the MCP server and its tools |
 | [`modal/README.md`](modal/README.md) | ChromBPNet scoring on Modal, with the model accessions |
 | [`dashboard/README.md`](dashboard/README.md) | the React dashboard |
+| [`regulatory_map/README.md`](regulatory_map/README.md) | the downloadable regulatory map + its data dictionary |
 
 ---
 

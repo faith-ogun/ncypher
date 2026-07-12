@@ -54,6 +54,22 @@ dist/
 !.claude/settings.json
 !.claude/hooks/
 .claude/settings.local.json
+
+# Obsidian vault config (local second brain; folds into Onkydra post-hackathon)
+.obsidian/
+
+# Demo footage (large local clips + screenshots; not for the submission repo).
+# The demo/ folder keeps only its docs (script/ + README + manifest); all the
+# heavy video-editing media stays local: raw clips, the iMovie library (tens of
+# GB), rendered scene MP4s / ProRes, VO audio, and OpenScreen project files.
+# Several files exceed GitHub's 100MB per-file limit and cannot be pushed anyway.
+demo/assets/
+demo/scenes/
+demo/NCypher.imovielibrary/
+demo/openscreen project files/
+*.imovielibrary/
 .DS_Store
 .vscode/
 .idea/
+.venv-mcp
+.mcp-python/

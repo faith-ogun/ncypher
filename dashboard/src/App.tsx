@@ -47,7 +47,7 @@ export default function App() {
 
 function GuardrailFooter() {
   return (
-    <footer className="mx-auto max-w-6xl px-8 pb-10">
+    <footer className="mx-auto max-w-[1600px] px-8 pb-10">
       <div className="rounded-xl2 border border-line bg-card p-5 shadow-card">
         <div className="flex items-center gap-2">
           <svg viewBox="0 0 24 24" className="h-4 w-4 text-brand-600" fill="none">

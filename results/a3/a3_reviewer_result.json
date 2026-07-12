@@ -1,0 +1,85 @@
+{
+  "frame_id": "16bcc535-67b6-45e1-91d8-8d94da1b045c",
+  "name": "Reviewer",
+  "agent_name": "REGULATORY_GENOMICS_SKEPTIC",
+  "status": "completed",
+  "_completion_bullets": [
+    "Re-derived all A3 numbers from raw per-context scorer tables (164/164 join, no missing)",
+    "Every review value reproduced: 80/56/28 labels, both paired contrasts, Wilcoxon p to 2 s.f., both leads",
+    "c15 Modal re-score matches sweep baseline to 1.1e-6",
+    "Verdict: survives as neural-vs-control; weakened as OPC-exclusive (progenitor-broad); circularity handled via unselected-progenitor primary test"
+  ],
+  "structured_output": {
+    "join_ok": true,
+    "n_joined": 164,
+    "per_context_median_abs_logfc": {
+      "c15": 0.2606,
+      "c11": 0.2717,
+      "c9": 0.2303,
+      "c10": 0.2516,
+      "control": 0.0917
+    },
+    "per_context_frac_fires": {
+      "c15": 1,
+      "c11": 0.6829,
+      "c9": 0.6098,
+      "c10": 0.6707,
+      "control": 0.3415
+    },
+    "labels": {
+      "OPC_specific": 80,
+      "broad": 56,
+      "weak": 28
+    },
+    "progenitor_vs_control": {
+      "median_diff": 0.208,
+      "ci95": [
+        0.162,
+        0.2533
+      ],
+      "wilcoxon_p": 4.91e-24,
+      "frac_neural_gt_control": 0.9024
+    },
+    "neural_vs_control": {
+      "median_diff": 0.266,
+      "ci95": [
+        0.2282,
+        0.3276
+      ],
+      "wilcoxon_p": 3.7e-26,
+      "frac_neural_gt_control": 0.9268
+    },
+    "npas3": {
+      "key": "chr14-33788719-A-G",
+      "gene": "NPAS3",
+      "abs_logfc": {
+        "c15": 0.71,
+        "c10": 0.164,
+        "c11": 0.166,
+        "c9": 0.109,
+        "control": 0.013
+      },
+      "label": "OPC_specific"
+    },
+    "syn3": {
+      "key": "chr22-33000876-C-T",
+      "gene": "SYN3",
+      "abs_logfc": {
+        "c15": 1.244,
+        "c10": 1.642,
+        "c11": 1.975,
+        "c9": 2.009,
+        "control": 0.657
+      },
+      "label": "broad"
+    },
+    "c15_validation_max_abs_diff": 1.09999999997612e-06,
+    "discrepancies": [
+      "progenitor_max-control bootstrap 95% CI: I got [+0.162,+0.253] vs review [+0.160,+0.248]; median diff, Wilcoxon p and frac all match exactly, so the ~0.005 CI-bound gap is bootstrap RNG-implementation discreteness (np.random.default_rng(42) vs a legacy seed), not an estimator discrepancy.",
+      "Label rule wording: the brief's literal 'weak = fails cutoff in c15 AND all progenitor contexts' yields weak=0 (c15 fires in 100% by construction), leaving 30 variants unassigned. The reproducible 80/56/28 partition requires: broad=fires control; OPC-specific=below control AND fires >=1 of c10/c11/c9; weak=below control AND fires none. I used that partition and it matches 80/56/28 exactly. Flagging the wording ambiguity."
+    ],
+    "verdict": "Partly specific, and honestly so. The converged set is strongly NEURAL-biased over the non-neural control (progenitor_max-control median +0.208, 95% CI excludes 0, one-sided Wilcoxon p=4.9e-24, 90.2% of variants neural>control; control median |log2FC| 0.092 vs 0.23-0.27 across the four brain contexts), but it is NOT OPC-exclusive: the three UNSELECTED progenitor contexts (c10/c11/c9) fire at 61-68% and carry medians (0.25-0.27) comparable to c15 (0.26). So the effect is a developing-brain-progenitor signal shared across OPC and radial-glia/IPC lineages, not a c15-private one. Of 164, 80 (48.8%) are OPC-specific by the neural-not-control rule, 56 broad (fire even in cardiomyocyte control), 28 weak. NPAS3 is a clean OPC-specific lead (c15 0.71, control 0.013); SYN3 is broad (fires everywhere incl. control 0.657) and should not be presented as context-specific. The Modal re-score reproduces the sweep c15 baseline to 1.1e-6, so the baseline reuse is sound. Verdict: SURVIVES as a neural-vs-control specificity claim; WEAKENED as an OPC-exclusive claim - it is progenitor-broad within neural lineages.",
+    "circularity_handled": true,
+    "reviewer_notes": "Circularity is handled correctly: c15 fires in 100% by selection, so c15-vs-control would be circular. The primary test reported is progenitor_max(c10/c11/c9)-control over the UNSELECTED contexts, which the converged variants were NOT chosen on; it is significant (p=4.9e-24) and is the defensible headline. The neural_max contrast (which re-includes c15) is inflated by the selection and should be treated as secondary/descriptive, not the specificity test - the brief labels it as such. Independent re-derivation from the raw per-context scorer tables (join 164/164, no missing) confirms every review number: per-context medians (c15 0.261, c11 0.272, c9 0.230, c10 0.252, control 0.092), 80/56/28 labels, both median diffs and fractions, both Wilcoxon p's to 2 s.f., both leads, and the c15 validation (1.1e-6, consistent with the sweep baseline being stored at ~6 dp). Two caveats for downstream framing: (1) 'OPC-specific' here means neural-not-cardiomyocyte, not OPC-not-other-progenitor - the label does not exclude radial-glia sharing, and 68% of OPC-specific hits also fire in >=1 other progenitor; a truly OPC-private tier would need an OPC-vs-other-progenitor contrast. (2) A cardiomyocyte control tests non-neural specificity, not general accessibility - a matched non-brain neural/ectodermal control would be a stronger negative. Enrichment/context-firing is not selection of drivers; these remain private single-patient hypotheses."
+  }
+}

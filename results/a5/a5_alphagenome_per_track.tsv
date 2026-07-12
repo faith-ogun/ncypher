@@ -1,0 +1,533 @@
+assay	biosample_name	biosample_life_stage	score	variant_id	gene	source
+ATAC	motor neuron	adult	-0.12877655	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	neuronal stem cell	embryonic	-0.5088892	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	astrocyte	unknown	0.19364929	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	glutamatergic neuron	adult	-0.88235235	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.139462	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.33558846	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.07523537	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	neural crest cell	embryonic	-0.824101	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	neural progenitor cell	embryonic	-0.6105809	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.5302563	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	brain	embryonic	-0.51612186	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	frontal cortex	adult	-0.47315454	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	cerebellar cortex	adult	-0.5147557	chr2-176638323-C-A	LINC01117	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.9013562	chr2-176638323-C-A	LINC01117	se-hit
+ATAC	motor neuron	adult	-0.6135454	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	neuronal stem cell	embryonic	-0.42734814	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	astrocyte	unknown	-0.059029818	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	glutamatergic neuron	adult	-0.33759975	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.10974693	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.28162098	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.16465902	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	neural crest cell	embryonic	-0.47332668	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	neural progenitor cell	embryonic	-0.5143471	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.25838137	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	brain	embryonic	-1.0466952	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	frontal cortex	adult	-0.34885216	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	cerebellar cortex	adult	-0.29758358	chr22-37968014-G-A	POLR2F	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.51819277	chr22-37968014-G-A	POLR2F	se-hit
+ATAC	motor neuron	adult	-0.16516066	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	neuronal stem cell	embryonic	-0.081567764	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	astrocyte	unknown	-0.033565283	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	glutamatergic neuron	adult	-0.15940285	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.0536108	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.08051205	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.052274704	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	neural crest cell	embryonic	-0.060525417	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	neural progenitor cell	embryonic	-0.13334227	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.051955223	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	brain	embryonic	-0.23315334	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	frontal cortex	adult	-0.06648922	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	cerebellar cortex	adult	-0.14425135	chr20-32528285-C-T	NOL4L	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.08336592	chr20-32528285-C-T	NOL4L	se-hit
+ATAC	motor neuron	adult	-0.10729408	chr19-13151895-C-G	IER2	se-hit
+DNASE	neuronal stem cell	embryonic	-0.15777588	chr19-13151895-C-G	IER2	se-hit
+DNASE	astrocyte	unknown	-0.16381931	chr19-13151895-C-G	IER2	se-hit
+DNASE	glutamatergic neuron	adult	-0.20454407	chr19-13151895-C-G	IER2	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.28592682	chr19-13151895-C-G	IER2	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.22099972	chr19-13151895-C-G	IER2	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.19753265	chr19-13151895-C-G	IER2	se-hit
+DNASE	neural crest cell	embryonic	-0.1728239	chr19-13151895-C-G	IER2	se-hit
+DNASE	neural progenitor cell	embryonic	-0.12697124	chr19-13151895-C-G	IER2	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.10035801	chr19-13151895-C-G	IER2	se-hit
+DNASE	brain	embryonic	-0.55781746	chr19-13151895-C-G	IER2	se-hit
+DNASE	frontal cortex	adult	-0.16650867	chr19-13151895-C-G	IER2	se-hit
+DNASE	cerebellar cortex	adult	-0.20959282	chr19-13151895-C-G	IER2	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.2926092	chr19-13151895-C-G	IER2	se-hit
+ATAC	motor neuron	adult	-0.43528938	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	neuronal stem cell	embryonic	-0.26426268	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	astrocyte	unknown	-0.2021153	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	glutamatergic neuron	adult	-0.16688776	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.213583	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.3699603	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.16370463	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	neural crest cell	embryonic	-0.27894783	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	neural progenitor cell	embryonic	-0.3377514	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.16601038	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	brain	embryonic	-0.40626335	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	frontal cortex	adult	-0.21605587	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	cerebellar cortex	adult	-0.18876076	chr7-37007541-C-G	ELMO1	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.39249563	chr7-37007541-C-G	ELMO1	se-hit
+ATAC	motor neuron	adult	-0.20050907	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	neuronal stem cell	embryonic	-0.021418095	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	astrocyte	unknown	-0.22381043	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	glutamatergic neuron	adult	0.0014281273	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.23777914	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.70345783	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.28224397	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	neural crest cell	embryonic	-0.050541878	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	neural progenitor cell	embryonic	-0.044917107	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.024227142	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	brain	embryonic	-0.5520735	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	frontal cortex	adult	-0.34500265	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	cerebellar cortex	adult	-0.3308158	chr11-72631936-C-A	PDE2A	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.42709684	chr11-72631936-C-A	PDE2A	se-hit
+ATAC	motor neuron	adult	-0.0064496994	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	neuronal stem cell	embryonic	-0.08189154	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	astrocyte	unknown	-0.49035072	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	glutamatergic neuron	adult	-0.17919755	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.5531926	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.32498384	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.46863842	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	neural crest cell	embryonic	-0.071976185	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	neural progenitor cell	embryonic	-0.12813354	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.1289196	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	brain	embryonic	-0.06025839	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	frontal cortex	adult	-0.060539246	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	cerebellar cortex	adult	-0.21420956	chr18-56067406-G-T	LINC01905	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.18069553	chr18-56067406-G-T	LINC01905	se-hit
+ATAC	motor neuron	adult	-1.1523647	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	neuronal stem cell	embryonic	0.05685091	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	astrocyte	unknown	-0.91177464	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	glutamatergic neuron	adult	-0.36884642	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.7534838	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.684083	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.71840763	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	neural crest cell	embryonic	-0.44840527	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	neural progenitor cell	embryonic	0.32280493	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.045999527	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	brain	embryonic	-0.43167162	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	frontal cortex	adult	-0.62702036	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	cerebellar cortex	adult	0.21537495	chr3-172153482-C-G	FNDC3B	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.8102541	chr3-172153482-C-G	FNDC3B	se-hit
+ATAC	motor neuron	adult	-0.19285536	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	neuronal stem cell	embryonic	0.10797453	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	astrocyte	unknown	-0.8286991	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	glutamatergic neuron	adult	-0.30547714	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.6583295	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.050024986	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.79586697	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	neural crest cell	embryonic	-0.031532764	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	neural progenitor cell	embryonic	0.13148832	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.032706738	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	brain	embryonic	0.0141534805	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	frontal cortex	adult	-0.099300385	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	cerebellar cortex	adult	0.13492298	chr11-36196158-G-A	LDLRAD3	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.020834923	chr11-36196158-G-A	LDLRAD3	se-hit
+ATAC	motor neuron	adult	-0.2835722	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	neuronal stem cell	embryonic	-0.056065083	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	astrocyte	unknown	-0.44462442	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	glutamatergic neuron	adult	-0.17110062	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.27166843	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.21420097	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.34437943	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	neural crest cell	embryonic	-0.11180973	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	neural progenitor cell	embryonic	-0.048374176	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.055964947	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	brain	embryonic	-0.13647795	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	frontal cortex	adult	-0.2553916	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	cerebellar cortex	adult	-0.10898781	chr1-232620638-C-T	SIPA1L2	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.4508686	chr1-232620638-C-T	SIPA1L2	se-hit
+ATAC	motor neuron	adult	-0.9469247	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	neuronal stem cell	embryonic	-0.7472296	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	astrocyte	unknown	-0.28961492	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	glutamatergic neuron	adult	-0.31178284	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.29869413	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.59297895	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.27381134	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	neural crest cell	embryonic	-0.6899452	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	neural progenitor cell	embryonic	-0.7500839	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.40915394	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	brain	embryonic	-0.71940327	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	frontal cortex	adult	-0.5373969	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	cerebellar cortex	adult	-0.457098	chr10-78176856-G-A	LOC105378374	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.8816023	chr10-78176856-G-A	LOC105378374	se-hit
+ATAC	motor neuron	adult	0.34582615	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	neuronal stem cell	embryonic	0.11061144	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	astrocyte	unknown	-0.037803173	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	glutamatergic neuron	adult	-0.006067276	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.044041157	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.057569504	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.011808395	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	neural crest cell	embryonic	0.1293602	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	neural progenitor cell	embryonic	0.12646961	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.049361706	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	brain	embryonic	0.31829786	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	frontal cortex	adult	0.065469265	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	cerebellar cortex	adult	0.032186985	chr14-54640636-G-T	SAMD4A	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.10007477	chr14-54640636-G-T	SAMD4A	se-hit
+ATAC	motor neuron	adult	-0.3513279	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	neuronal stem cell	embryonic	-0.037999153	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	astrocyte	unknown	-0.18040061	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	glutamatergic neuron	adult	-0.1454773	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.03135729	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.21828556	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.20056915	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	neural crest cell	embryonic	-0.14410734	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	neural progenitor cell	embryonic	-0.0037088394	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.064540386	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	brain	embryonic	-0.3701911	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	frontal cortex	adult	-0.32557583	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	cerebellar cortex	adult	-0.059194088	chr16-17369899-C-T	XYLT1	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.4154482	chr16-17369899-C-T	XYLT1	se-hit
+ATAC	motor neuron	adult	-0.04061556	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	neuronal stem cell	embryonic	0.0024704933	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	astrocyte	unknown	-0.0871954	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	glutamatergic neuron	adult	0.19951129	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.0055508614	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.038320065	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.030201912	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	neural crest cell	embryonic	-0.18427801	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	neural progenitor cell	embryonic	0.05282116	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.06908131	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	brain	embryonic	-0.036423206	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	frontal cortex	adult	-0.10953808	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	cerebellar cortex	adult	-0.031162262	chr14-33788719-A-G	NPAS3	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.06039238	chr14-33788719-A-G	NPAS3	se-hit
+ATAC	motor neuron	adult	-0.83019876	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	neuronal stem cell	embryonic	0.088204384	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	astrocyte	unknown	-1.3587027	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	glutamatergic neuron	adult	-0.18275785	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.9159179	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.7650924	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-1.2119513	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	neural crest cell	embryonic	0.042378902	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	neural progenitor cell	embryonic	0.20646524	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.12687778	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	brain	embryonic	-0.26140594	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	frontal cortex	adult	-0.45287848	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	cerebellar cortex	adult	-1.1322279	chr11-48104480-A-G	PTPRJ	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.20580196	chr11-48104480-A-G	PTPRJ	se-hit
+ATAC	motor neuron	adult	-0.1954031	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	neuronal stem cell	embryonic	-0.2275753	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	astrocyte	unknown	-0.07087135	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	glutamatergic neuron	adult	-0.1520195	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.36778975	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.29790974	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.306911	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	neural crest cell	embryonic	-0.31160545	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	neural progenitor cell	embryonic	-0.011928558	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.1118989	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	brain	embryonic	-0.33850002	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	frontal cortex	adult	-0.39674664	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	cerebellar cortex	adult	-0.40049458	chr18-79246710-G-A	ATP9B	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.26349783	chr18-79246710-G-A	ATP9B	se-hit
+ATAC	motor neuron	adult	0.010500908	chr9-134438332-G-A	RXRA	se-hit
+DNASE	neuronal stem cell	embryonic	0.0024909973	chr9-134438332-G-A	RXRA	se-hit
+DNASE	astrocyte	unknown	0.03988266	chr9-134438332-G-A	RXRA	se-hit
+DNASE	glutamatergic neuron	adult	0.0021924973	chr9-134438332-G-A	RXRA	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.019282818	chr9-134438332-G-A	RXRA	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.0298028	chr9-134438332-G-A	RXRA	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.034668922	chr9-134438332-G-A	RXRA	se-hit
+DNASE	neural crest cell	embryonic	-0.005675316	chr9-134438332-G-A	RXRA	se-hit
+DNASE	neural progenitor cell	embryonic	-0.004099846	chr9-134438332-G-A	RXRA	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.0033626556	chr9-134438332-G-A	RXRA	se-hit
+DNASE	brain	embryonic	0.005094528	chr9-134438332-G-A	RXRA	se-hit
+DNASE	frontal cortex	adult	-0.0012960434	chr9-134438332-G-A	RXRA	se-hit
+DNASE	cerebellar cortex	adult	0.054472923	chr9-134438332-G-A	RXRA	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.012563705	chr9-134438332-G-A	RXRA	se-hit
+ATAC	motor neuron	adult	0.06336403	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	neuronal stem cell	embryonic	-0.14820433	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	astrocyte	unknown	-0.20887566	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	glutamatergic neuron	adult	0.030829906	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.09045839	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.37283182	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.041987896	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	neural crest cell	embryonic	-0.089646816	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	neural progenitor cell	embryonic	-0.18539715	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.115914345	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	brain	embryonic	-0.1374712	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	frontal cortex	adult	0.009410858	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	cerebellar cortex	adult	-0.45986986	chr11-121742105-C-A	ENST00000652518	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.044218063	chr11-121742105-C-A	ENST00000652518	se-hit
+ATAC	motor neuron	adult	-0.033857822	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	neuronal stem cell	embryonic	-0.12738085	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	astrocyte	unknown	0.0063433647	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	glutamatergic neuron	adult	-0.05961466	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.035190582	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.051082134	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.025531054	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	neural crest cell	embryonic	-0.1820693	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	neural progenitor cell	embryonic	-0.14455223	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.08694029	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	brain	embryonic	-0.18708324	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	frontal cortex	adult	-0.1433444	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	cerebellar cortex	adult	-0.11750841	chr22-37968995-G-A	POLR2F	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.27168274	chr22-37968995-G-A	POLR2F	se-hit
+ATAC	motor neuron	adult	-0.12743282	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	neuronal stem cell	embryonic	0.043177128	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	astrocyte	unknown	0.09127855	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	glutamatergic neuron	adult	-0.057279587	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.05097294	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.07066822	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.04074335	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	neural crest cell	embryonic	0.11929846	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	neural progenitor cell	embryonic	0.026715279	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.003419876	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	brain	embryonic	-0.020141602	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	frontal cortex	adult	0.060280323	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	cerebellar cortex	adult	0.014236689	chr11-125235298-C-T	PKNOX2	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.06454992	chr11-125235298-C-T	PKNOX2	se-hit
+ATAC	motor neuron	adult	-0.035826683	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	neuronal stem cell	embryonic	-0.039068222	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	astrocyte	unknown	-0.074965954	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	glutamatergic neuron	adult	-0.07906294	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.09880066	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.05748272	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.05611658	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	neural crest cell	embryonic	-0.029027939	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	neural progenitor cell	embryonic	-0.051746845	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.038185596	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	brain	embryonic	-0.12453079	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	frontal cortex	adult	-0.060241222	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	cerebellar cortex	adult	-0.064380646	chr14-68791314-G-A	ZFP36L1	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.08172655	chr14-68791314-G-A	ZFP36L1	se-hit
+ATAC	motor neuron	adult	-0.24460411	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	neuronal stem cell	embryonic	-0.35958195	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	astrocyte	unknown	-0.117399216	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	glutamatergic neuron	adult	-0.4783907	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.32408524	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.28585815	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.2618122	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	neural crest cell	embryonic	-0.46780777	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	neural progenitor cell	embryonic	-0.34061337	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.27835178	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	brain	embryonic	-0.82147074	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	frontal cortex	adult	-0.371624	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	cerebellar cortex	adult	-0.59376	chr17-50200666-C-T	COL1A1	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.554019	chr17-50200666-C-T	COL1A1	se-hit
+ATAC	motor neuron	adult	-0.25559998	chr19-3397698-G-A	NFIC	se-hit
+DNASE	neuronal stem cell	embryonic	-0.20891237	chr19-3397698-G-A	NFIC	se-hit
+DNASE	astrocyte	unknown	-0.14270592	chr19-3397698-G-A	NFIC	se-hit
+DNASE	glutamatergic neuron	adult	-0.07535362	chr19-3397698-G-A	NFIC	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.08207035	chr19-3397698-G-A	NFIC	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.1822443	chr19-3397698-G-A	NFIC	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.14781046	chr19-3397698-G-A	NFIC	se-hit
+DNASE	neural crest cell	embryonic	-0.20066977	chr19-3397698-G-A	NFIC	se-hit
+DNASE	neural progenitor cell	embryonic	-0.23723269	chr19-3397698-G-A	NFIC	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.12614489	chr19-3397698-G-A	NFIC	se-hit
+DNASE	brain	embryonic	-0.2563424	chr19-3397698-G-A	NFIC	se-hit
+DNASE	frontal cortex	adult	-0.09242487	chr19-3397698-G-A	NFIC	se-hit
+DNASE	cerebellar cortex	adult	0.0003566742	chr19-3397698-G-A	NFIC	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.08108044	chr19-3397698-G-A	NFIC	se-hit
+ATAC	motor neuron	adult	0.44965982	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	neuronal stem cell	embryonic	0.33820057	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	astrocyte	unknown	0.41843557	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	glutamatergic neuron	adult	0.20308304	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.45286703	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.5288143	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.45086813	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	neural crest cell	embryonic	0.3205552	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	neural progenitor cell	embryonic	0.4506402	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.21952057	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	brain	embryonic	0.4884677	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	frontal cortex	adult	0.22121525	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	cerebellar cortex	adult	0.21183634	chr10-88234518-G-C	LOC101929727	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.35747147	chr10-88234518-G-C	LOC101929727	se-hit
+ATAC	motor neuron	adult	-0.009501934	chr15-64134492-C-T	SNX1	se-hit
+DNASE	neuronal stem cell	embryonic	0.016039133	chr15-64134492-C-T	SNX1	se-hit
+DNASE	astrocyte	unknown	0.113960266	chr15-64134492-C-T	SNX1	se-hit
+DNASE	glutamatergic neuron	adult	0.0040946007	chr15-64134492-C-T	SNX1	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.105942726	chr15-64134492-C-T	SNX1	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.042805195	chr15-64134492-C-T	SNX1	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.09869242	chr15-64134492-C-T	SNX1	se-hit
+DNASE	neural crest cell	embryonic	-0.03449917	chr15-64134492-C-T	SNX1	se-hit
+DNASE	neural progenitor cell	embryonic	0.023845673	chr15-64134492-C-T	SNX1	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.0037345886	chr15-64134492-C-T	SNX1	se-hit
+DNASE	brain	embryonic	-0.07874775	chr15-64134492-C-T	SNX1	se-hit
+DNASE	frontal cortex	adult	-0.07881594	chr15-64134492-C-T	SNX1	se-hit
+DNASE	cerebellar cortex	adult	0.16587257	chr15-64134492-C-T	SNX1	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.07980633	chr15-64134492-C-T	SNX1	se-hit
+ATAC	motor neuron	adult	0.97798586	chr16-12252829-G-A	SNX29	se-hit
+DNASE	neuronal stem cell	embryonic	0.33375883	chr16-12252829-G-A	SNX29	se-hit
+DNASE	astrocyte	unknown	0.30506825	chr16-12252829-G-A	SNX29	se-hit
+DNASE	glutamatergic neuron	adult	0.19606018	chr16-12252829-G-A	SNX29	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.33633852	chr16-12252829-G-A	SNX29	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.6762886	chr16-12252829-G-A	SNX29	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.30404687	chr16-12252829-G-A	SNX29	se-hit
+DNASE	neural crest cell	embryonic	0.28566647	chr16-12252829-G-A	SNX29	se-hit
+DNASE	neural progenitor cell	embryonic	0.29206657	chr16-12252829-G-A	SNX29	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.1594019	chr16-12252829-G-A	SNX29	se-hit
+DNASE	brain	embryonic	0.9018922	chr16-12252829-G-A	SNX29	se-hit
+DNASE	frontal cortex	adult	0.41971064	chr16-12252829-G-A	SNX29	se-hit
+DNASE	cerebellar cortex	adult	0.23263264	chr16-12252829-G-A	SNX29	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.45607328	chr16-12252829-G-A	SNX29	se-hit
+ATAC	motor neuron	adult	0.16522622	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	neuronal stem cell	embryonic	0.25214624	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	astrocyte	unknown	0.22215128	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	glutamatergic neuron	adult	-0.09481573	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.20140219	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.33841372	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.15240312	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	neural crest cell	embryonic	0.253098	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	neural progenitor cell	embryonic	0.25300884	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.02958703	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	brain	embryonic	0.33939838	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	frontal cortex	adult	0.26015377	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	cerebellar cortex	adult	0.1778369	chr6-131427523-C-T	LOC105378005	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.3751421	chr6-131427523-C-T	LOC105378005	se-hit
+ATAC	motor neuron	adult	0.090575695	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	neuronal stem cell	embryonic	0.06034565	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	astrocyte	unknown	0.15007019	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	glutamatergic neuron	adult	-0.027862072	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.07286024	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.10879421	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.07567692	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	neural crest cell	embryonic	0.10410166	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	neural progenitor cell	embryonic	0.03719902	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.022951126	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	brain	embryonic	0.08035374	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	frontal cortex	adult	0.081440926	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	cerebellar cortex	adult	0.026854992	chr22-41964348-G-A	ENSR00000672906	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.09839249	chr22-41964348-G-A	ENSR00000672906	se-hit
+ATAC	motor neuron	adult	0.122042656	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	neuronal stem cell	embryonic	0.21426105	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	astrocyte	unknown	0.112754345	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	glutamatergic neuron	adult	0.015098095	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.10365486	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.12688541	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.06972313	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	neural crest cell	embryonic	0.21894741	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	neural progenitor cell	embryonic	0.15955544	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.12280226	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	brain	embryonic	0.095749855	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	frontal cortex	adult	0.10279274	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	cerebellar cortex	adult	0.054442406	chr14-54627947-A-G	SAMD4A	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.05871916	chr14-54627947-A-G	SAMD4A	se-hit
+ATAC	motor neuron	adult	-0.0567894	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	neuronal stem cell	embryonic	-0.059692383	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	astrocyte	unknown	-0.07356644	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	glutamatergic neuron	adult	-0.13577294	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	astrocyte of the cerebellum	unknown	-0.12783623	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	astrocyte of the hippocampus	unknown	-0.048511505	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	astrocyte of the spinal cord	unknown	-0.103245735	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	neural crest cell	embryonic	-0.15304184	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	neural progenitor cell	embryonic	-0.119628906	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	ecto neural progenitor cell	embryonic	-0.16249704	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	brain	embryonic	-0.17091131	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	frontal cortex	adult	-0.07900381	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	cerebellar cortex	adult	-0.24344301	chr2-196988216-G-A	ANKRD44	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	-0.053355217	chr2-196988216-G-A	ANKRD44	se-hit
+ATAC	motor neuron	adult	0.27088022	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	neuronal stem cell	embryonic	0.20076132	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	astrocyte	unknown	0.42321157	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	glutamatergic neuron	adult	0.01380682	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	astrocyte of the cerebellum	unknown	0.35040092	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	astrocyte of the hippocampus	unknown	0.34093285	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	astrocyte of the spinal cord	unknown	0.29018545	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	neural crest cell	embryonic	0.1755538	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	neural progenitor cell	embryonic	0.1960082	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	ecto neural progenitor cell	embryonic	0.10062742	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	brain	embryonic	0.1939373	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	frontal cortex	adult	0.099273205	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	cerebellar cortex	adult	0.13101482	chr6-164010768-T-C	LOC105378102	se-hit
+DNASE	dorsolateral prefrontal cortex	adult	0.10044432	chr6-164010768-T-C	LOC105378102	se-hit
+ATAC	motor neuron	adult	-2.4262586	chr22-33000876-C-T	SYN3	hero
+DNASE	neuronal stem cell	embryonic	-2.0619946	chr22-33000876-C-T	SYN3	hero
+DNASE	astrocyte	unknown	-2.0014694	chr22-33000876-C-T	SYN3	hero
+DNASE	glutamatergic neuron	adult	-2.6408172	chr22-33000876-C-T	SYN3	hero
+DNASE	astrocyte of the cerebellum	unknown	-2.043633	chr22-33000876-C-T	SYN3	hero
+DNASE	astrocyte of the hippocampus	unknown	-3.2091098	chr22-33000876-C-T	SYN3	hero
+DNASE	astrocyte of the spinal cord	unknown	-2.9169717	chr22-33000876-C-T	SYN3	hero
+DNASE	neural crest cell	embryonic	-2.6197348	chr22-33000876-C-T	SYN3	hero
+DNASE	neural progenitor cell	embryonic	-2.1350794	chr22-33000876-C-T	SYN3	hero
+DNASE	ecto neural progenitor cell	embryonic	-1.7560706	chr22-33000876-C-T	SYN3	hero
+DNASE	brain	embryonic	-2.8835902	chr22-33000876-C-T	SYN3	hero
+DNASE	frontal cortex	adult	-1.8948298	chr22-33000876-C-T	SYN3	hero
+DNASE	cerebellar cortex	adult	-2.080183	chr22-33000876-C-T	SYN3	hero
+DNASE	dorsolateral prefrontal cortex	adult	-2.2853851	chr22-33000876-C-T	SYN3	hero
+ATAC	motor neuron	adult	-0.083807945	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	neuronal stem cell	embryonic	0.015217781	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	astrocyte	unknown	-0.0446465	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	glutamatergic neuron	adult	-0.017111301	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	astrocyte of the cerebellum	unknown	0.078415394	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	astrocyte of the hippocampus	unknown	-0.04958725	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	astrocyte of the spinal cord	unknown	0.07107949	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	neural crest cell	embryonic	-0.027246475	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	neural progenitor cell	embryonic	0.038047314	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	ecto neural progenitor cell	embryonic	-0.01936388	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	brain	embryonic	0.21440697	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	frontal cortex	adult	0.05227375	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	cerebellar cortex	adult	0.2551775	chr3-181317760-C-T	SOX2-OT	hero
+DNASE	dorsolateral prefrontal cortex	adult	0.0046539307	chr3-181317760-C-T	SOX2-OT	hero
+ATAC	motor neuron	adult	-0.45832777	chr13-98333680-C-G	FARP1	hero
+DNASE	neuronal stem cell	embryonic	-0.2542534	chr13-98333680-C-G	FARP1	hero
+DNASE	astrocyte	unknown	-0.4274516	chr13-98333680-C-G	FARP1	hero
+DNASE	glutamatergic neuron	adult	-0.11544371	chr13-98333680-C-G	FARP1	hero
+DNASE	astrocyte of the cerebellum	unknown	-0.3645463	chr13-98333680-C-G	FARP1	hero
+DNASE	astrocyte of the hippocampus	unknown	-0.50733614	chr13-98333680-C-G	FARP1	hero
+DNASE	astrocyte of the spinal cord	unknown	-0.33772135	chr13-98333680-C-G	FARP1	hero
+DNASE	neural crest cell	embryonic	-0.5130677	chr13-98333680-C-G	FARP1	hero
+DNASE	neural progenitor cell	embryonic	-0.23476791	chr13-98333680-C-G	FARP1	hero
+DNASE	ecto neural progenitor cell	embryonic	-0.18762398	chr13-98333680-C-G	FARP1	hero
+DNASE	brain	embryonic	-0.4575224	chr13-98333680-C-G	FARP1	hero
+DNASE	frontal cortex	adult	-0.3583007	chr13-98333680-C-G	FARP1	hero
+DNASE	cerebellar cortex	adult	-0.3275013	chr13-98333680-C-G	FARP1	hero
+DNASE	dorsolateral prefrontal cortex	adult	-0.6716161	chr13-98333680-C-G	FARP1	hero
+ATAC	motor neuron	adult	-0.1626153	chr11-75445498-C-T	GDPD5	hero
+DNASE	neuronal stem cell	embryonic	-0.41238832	chr11-75445498-C-T	GDPD5	hero
+DNASE	astrocyte	unknown	0.011839867	chr11-75445498-C-T	GDPD5	hero
+DNASE	glutamatergic neuron	adult	-0.60128593	chr11-75445498-C-T	GDPD5	hero
+DNASE	astrocyte of the cerebellum	unknown	-0.18204212	chr11-75445498-C-T	GDPD5	hero
+DNASE	astrocyte of the hippocampus	unknown	-0.32839823	chr11-75445498-C-T	GDPD5	hero
+DNASE	astrocyte of the spinal cord	unknown	-0.28044987	chr11-75445498-C-T	GDPD5	hero
+DNASE	neural crest cell	embryonic	-0.64833164	chr11-75445498-C-T	GDPD5	hero
+DNASE	neural progenitor cell	embryonic	-0.22522354	chr11-75445498-C-T	GDPD5	hero
+DNASE	ecto neural progenitor cell	embryonic	-0.4101119	chr11-75445498-C-T	GDPD5	hero
+DNASE	brain	embryonic	-0.5412731	chr11-75445498-C-T	GDPD5	hero
+DNASE	frontal cortex	adult	-0.3878336	chr11-75445498-C-T	GDPD5	hero
+DNASE	cerebellar cortex	adult	-0.40835285	chr11-75445498-C-T	GDPD5	hero
+DNASE	dorsolateral prefrontal cortex	adult	-0.7230625	chr11-75445498-C-T	GDPD5	hero
+ATAC	motor neuron	adult	0.73798275	chr5-1295113-G-A	TERT	hero
+DNASE	neuronal stem cell	embryonic	0.30829668	chr5-1295113-G-A	TERT	hero
+DNASE	astrocyte	unknown	0.91984224	chr5-1295113-G-A	TERT	hero
+DNASE	glutamatergic neuron	adult	0.32175446	chr5-1295113-G-A	TERT	hero
+DNASE	astrocyte of the cerebellum	unknown	0.75522923	chr5-1295113-G-A	TERT	hero
+DNASE	astrocyte of the hippocampus	unknown	0.91257143	chr5-1295113-G-A	TERT	hero
+DNASE	astrocyte of the spinal cord	unknown	1.0623116	chr5-1295113-G-A	TERT	hero
+DNASE	neural crest cell	embryonic	0.51365423	chr5-1295113-G-A	TERT	hero
+DNASE	neural progenitor cell	embryonic	0.20880699	chr5-1295113-G-A	TERT	hero
+DNASE	ecto neural progenitor cell	embryonic	0.26091385	chr5-1295113-G-A	TERT	hero
+DNASE	brain	embryonic	0.6228671	chr5-1295113-G-A	TERT	hero
+DNASE	frontal cortex	adult	0.5776315	chr5-1295113-G-A	TERT	hero
+DNASE	cerebellar cortex	adult	0.80773306	chr5-1295113-G-A	TERT	hero
+DNASE	dorsolateral prefrontal cortex	adult	0.6318283	chr5-1295113-G-A	TERT	hero
+ATAC	motor neuron	adult	-0.09671545	chr4-57055909-T-C	IGFBP7	hero
+DNASE	neuronal stem cell	embryonic	0.013954639	chr4-57055909-T-C	IGFBP7	hero
+DNASE	astrocyte	unknown	-0.11903334	chr4-57055909-T-C	IGFBP7	hero
+DNASE	glutamatergic neuron	adult	0.010052681	chr4-57055909-T-C	IGFBP7	hero
+DNASE	astrocyte of the cerebellum	unknown	-0.11317921	chr4-57055909-T-C	IGFBP7	hero
+DNASE	astrocyte of the hippocampus	unknown	-0.16033697	chr4-57055909-T-C	IGFBP7	hero
+DNASE	astrocyte of the spinal cord	unknown	-0.06596041	chr4-57055909-T-C	IGFBP7	hero
+DNASE	neural crest cell	embryonic	-0.40276337	chr4-57055909-T-C	IGFBP7	hero
+DNASE	neural progenitor cell	embryonic	0.10523224	chr4-57055909-T-C	IGFBP7	hero
+DNASE	ecto neural progenitor cell	embryonic	-0.018909454	chr4-57055909-T-C	IGFBP7	hero
+DNASE	brain	embryonic	-0.2568822	chr4-57055909-T-C	IGFBP7	hero
+DNASE	frontal cortex	adult	-0.25203657	chr4-57055909-T-C	IGFBP7	hero
+DNASE	cerebellar cortex	adult	-0.1195488	chr4-57055909-T-C	IGFBP7	hero
+DNASE	dorsolateral prefrontal cortex	adult	-0.42487097	chr4-57055909-T-C	IGFBP7	hero
+ATAC	motor neuron	adult	0.010731697	chr9-79651705-C-T	TLE4	hero
+DNASE	neuronal stem cell	embryonic	0.15562391	chr9-79651705-C-T	TLE4	hero
+DNASE	astrocyte	unknown	0.097387314	chr9-79651705-C-T	TLE4	hero
+DNASE	glutamatergic neuron	adult	0.05174446	chr9-79651705-C-T	TLE4	hero
+DNASE	astrocyte of the cerebellum	unknown	0.0031933784	chr9-79651705-C-T	TLE4	hero
+DNASE	astrocyte of the hippocampus	unknown	0.06650019	chr9-79651705-C-T	TLE4	hero
+DNASE	astrocyte of the spinal cord	unknown	-0.04127264	chr9-79651705-C-T	TLE4	hero
+DNASE	neural crest cell	embryonic	-0.018884659	chr9-79651705-C-T	TLE4	hero
+DNASE	neural progenitor cell	embryonic	0.30719662	chr9-79651705-C-T	TLE4	hero
+DNASE	ecto neural progenitor cell	embryonic	0.13481808	chr9-79651705-C-T	TLE4	hero
+DNASE	brain	embryonic	-0.01877594	chr9-79651705-C-T	TLE4	hero
+DNASE	frontal cortex	adult	-0.039711952	chr9-79651705-C-T	TLE4	hero
+DNASE	cerebellar cortex	adult	0.051817417	chr9-79651705-C-T	TLE4	hero
+DNASE	dorsolateral prefrontal cortex	adult	-0.058408737	chr9-79651705-C-T	TLE4	hero

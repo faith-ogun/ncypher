@@ -1,0 +1,63 @@
+{
+  "naive": {
+    "median_in_se": 0.283,
+    "median_out_se": 0.185,
+    "median_diff": 0.0955,
+    "mwu_p_two_sided": 0.005224,
+    "mwu_p_one_sided": 0.002612,
+    "n_in": 1946,
+    "n_out": 8907
+  },
+  "permutation": {
+    "strata": "dtss_decile x rt_decile x class",
+    "draws": 1000,
+    "seed": 0,
+    "obs_in_se_median": 0.281,
+    "null_median": 0.154,
+    "null_ci": [
+      0.114,
+      0.192
+    ],
+    "matchable_frac": 0.992,
+    "p_emp": 0.001
+  },
+  "regression_ols": {
+    "formula": "phylop ~ in_se + log_dist_tss + rep_timing + C(cls)",
+    "cov": "HC3",
+    "in_se_coef": 0.1402,
+    "p": 0.01565,
+    "wald_ci": [
+      0.0265,
+      0.2539
+    ],
+    "boot_ci": [
+      0.0253,
+      0.2493
+    ],
+    "boot_p": 0.009,
+    "estimand": "mean shift"
+  },
+  "regression_median": {
+    "formula": "phylop ~ in_se + log_dist_tss + rep_timing + C(cls)",
+    "q": 0.5,
+    "in_se_coef": 0.0868,
+    "p": 0.00244,
+    "ci": [
+      0.0307,
+      0.1429
+    ],
+    "boot_ci": [
+      0.0212,
+      0.156
+    ],
+    "boot_p": 0.008,
+    "estimand": "median shift"
+  },
+  "confound_qc": {
+    "dist_tss_vs_in_se_mwu_p": 0.103,
+    "dist_tss_vs_phylop_rho": -0.02,
+    "rep_timing_vs_in_se_mwu_p": 6.23e-133,
+    "rep_timing_vs_phylop_rho": 0.002
+  },
+  "verdict": "SURVIVES"
+}

@@ -1,0 +1,103 @@
+{
+  "name": "NCypher DMG non-coding regulatory map",
+  "version": "1.0.0",
+  "built_utc": "2026-07-12T02:30:53Z",
+  "description": "Every scored somatic non-coding SNV in the OpenPedCan H3 K27M DMG cohort, with chromatin score, evolutionary constraint, two-axis convergence verdict, model-native motif, and Claude Science hardening annotations (A3 context-specificity, A9/A9b target gene, A5 cross-check).",
+  "genome": "GRCh38",
+  "model": "developing-brain ChromBPNet, fetal-OPC (Trevino 2021 cluster c15)",
+  "thresholds": {
+    "chromatin_high_impact_abs_log2fc": 0.162,
+    "constraint_phylop": 2.27
+  },
+  "n_columns": 37,
+  "coverage": {
+    "total_scored": 10869,
+    "converged": 164,
+    "in_super_enhancer": 31,
+    "with_motif_call": 164,
+    "with_a3_context_label": 164,
+    "with_a9_target_gene": 164,
+    "with_a9b_hic_target": 164,
+    "with_a5_alphagenome": 37,
+    "verdict_GO": 164,
+    "verdict_HOLD": 2008,
+    "verdict_NOGO": 8697
+  },
+  "columns": [
+    "variant_id",
+    "chrom",
+    "pos",
+    "ref",
+    "alt",
+    "host_gene",
+    "variant_class",
+    "n_patients",
+    "chromatin_log2fc",
+    "chromatin_abs_log2fc",
+    "chromatin_jsd",
+    "chromatin_high_impact",
+    "chromatin_impact_pctile",
+    "phylop",
+    "constrained",
+    "converged",
+    "confidence",
+    "direction",
+    "verdict",
+    "motif_top_tf",
+    "motif_pwm_delta",
+    "motif_is_opc_lineage_tf",
+    "a3_context_label",
+    "a3_progenitor_max_abs_log2fc",
+    "a3_heart_control_abs_log2fc",
+    "in_dipg_super_enhancer",
+    "a9_target_gene",
+    "a9_target_basis",
+    "a9_target_confidence",
+    "a9_eqtl_supported",
+    "a9_nearest_tss_gene",
+    "a9b_hic_target_gene",
+    "a9b_hic_obs_over_exp",
+    "a9b_hic_tier",
+    "a5_alphagenome_direction",
+    "a5_direction_agrees",
+    "a5_agreement_class"
+  ],
+  "sources": {
+    "sweep": {
+      "path": "data/dmg/sweep_result.tsv",
+      "md5": "64cf28713f4bdbe70d850aba4ab6fbf5",
+      "rows": 10869
+    },
+    "motif": {
+      "path": "data/dmg/motif_convergence.converged.tsv",
+      "md5": "f5380368436bec1b5109ba95e14e93d3",
+      "rows": 164
+    },
+    "a3": {
+      "path": "results/a3/a3_context_matrix.tsv",
+      "md5": "38d8c75ee1bcef6fe58bc5beed7bb793",
+      "rows": 164
+    },
+    "a9": {
+      "path": "results/a9/a9_target_gene_table.tsv",
+      "md5": "ac9839e7611776f25baabbe89b4c3094",
+      "rows": 164
+    },
+    "a9b": {
+      "path": "results/a9b/a9b_hic_target_table.tsv",
+      "md5": "189794df088f9669102abf779d62ccd8",
+      "rows": 164
+    },
+    "a5": {
+      "path": "results/a5/a5_comparison_table.tsv",
+      "md5": "6d48d8fe4265db6f052cf23d956c7bc4",
+      "rows": 38
+    }
+  },
+  "files": {
+    "full_tsv": "ncypher_dmg_regulatory_map.tsv",
+    "converged_tsv": "ncypher_dmg_regulatory_map.converged.tsv",
+    "parquet": "ncypher_dmg_regulatory_map.parquet"
+  },
+  "provenance_note": "Annotation columns are populated only where that analysis covered the variant (LEFT join by variant_id); nulls are 'not assessed', not 'assessed negative'. See data_dictionary.md."
+}

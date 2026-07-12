@@ -1,0 +1,81 @@
+{
+  "n_variants": 164,
+  "p99_cutoff": 0.162,
+  "control_context": "domcke_2020.fetal_heart.Cardiomyocytes",
+  "control_syn_id": "syn64715850",
+  "median_abs_logfc": {
+    "c15_opc": 0.26058791,
+    "c11_early_rg": 0.271683155,
+    "c9_late_rg": 0.230252295,
+    "c10_oligo_ipc": 0.251611035,
+    "heart_control": 0.09171332500000001
+  },
+  "frac_fires_p99": {
+    "c15_opc": 1.0,
+    "c11_early_rg": 0.6829268292682927,
+    "c9_late_rg": 0.6097560975609756,
+    "c10_oligo_ipc": 0.6707317073170732,
+    "heart_control": 0.34146341463414637
+  },
+  "labels": {
+    "OPC-specific": 80,
+    "broad": 56,
+    "weak": 28
+  },
+  "opc_specific_fraction": 0.4878048780487805,
+  "progenitor_vs_control": {
+    "median_diff": 0.207995335,
+    "ci": [
+      0.16023128800000003,
+      0.2482362925
+    ],
+    "wilcoxon_p": 4.909715343038475e-24,
+    "frac_gt": 0.9024390243902439
+  },
+  "neural_vs_control": {
+    "median_diff": 0.26597018699999997,
+    "ci": [
+      0.22821247299999997,
+      0.327635557
+    ],
+    "wilcoxon_p": 3.6974801714966174e-26,
+    "frac_gt": 0.926829268292683
+  },
+  "caqtl_reference_gap": {
+    "auroc_gap": 0.24,
+    "ci": [
+      0.081,
+      0.394
+    ]
+  },
+  "leads": {
+    "NPAS3": {
+      "key": "chr14-33788719-A-G",
+      "phylop": 4.679,
+      "label": "OPC-specific",
+      "abs": {
+        "c15_opc": 0.71039784,
+        "c11_early_rg": 0.1663123,
+        "c9_late_rg": 0.10911456,
+        "c10_oligo_ipc": 0.16424216,
+        "heart_control": 0.013333068
+      }
+    },
+    "SYN3": {
+      "key": "chr22-33000876-C-T",
+      "phylop": 8.583,
+      "label": "broad",
+      "abs": {
+        "c15_opc": 1.2443032,
+        "c11_early_rg": 1.9749498,
+        "c9_late_rg": 2.0088763,
+        "c10_oligo_ipc": 1.6423708,
+        "heart_control": 0.6569783
+      }
+    }
+  },
+  "c15_validation": {
+    "rescored_vs_sweep_max_abs_diff": 1.1e-06,
+    "pearson_r": 0.99999999999
+  }
+}

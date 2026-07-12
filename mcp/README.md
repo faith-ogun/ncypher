@@ -27,6 +27,7 @@ the caller the chromatin axis still needs scoring.
 | `score_variant` | `score_variant(variant_id: str)` | Full three-axis triage for one variant (e.g. `"chr22-33000876-C-T"`): structured axis values + a go/no-go memo built by the convergence engine. Cache hit gives the complete call; a miss does a live phyloP lookup and flags the chromatin axis as unscored. A saliency PNG is attached only if one already exists on disk (e.g. TERT logos). |
 | `top_candidates` | `top_candidates(n: int = 20, converged_only: bool = True)` | The ranked "which to validate first" shortlist, as a markdown table plus a structured candidate list (key, gene, log2FC, phyloP, confidence, converged). |
 | `cohort_summary` | `cohort_summary()` | The honest headline numbers from the sweep (10,869 scored, 753 chromatin high-impact, 1,583 constrained, 164 converged, 0 recurrent, 0 in canonical driver genes) with the honest caveat. Computed live from the cache. |
+| `get_regulatory_map` | `get_regulatory_map(limit: int = 0)` | The downloadable DMG regulatory map: manifest + 37-column schema + the 164 converged hits (fully annotated, **typed** booleans/numbers) + paths to the full 10,869-row TSV/Parquet. The tool-accessible twin of the `ncypher://regulatory-map` resource, for hosts that surface tools but not resources. |
 
 ## Requirements
 

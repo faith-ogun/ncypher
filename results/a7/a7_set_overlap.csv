@@ -1,0 +1,4 @@
+setA,setB,intersection,union,jaccard
+converged,top164_phylop,20,308,0.06493506493506493
+converged,top164_chromatin,45,283,0.15901060070671377
+top164_phylop,top164_chromatin,10,318,0.031446540880503145

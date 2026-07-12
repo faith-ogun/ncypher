@@ -25,7 +25,7 @@ export function TheFinding() {
   }));
 
   return (
-    <div className="mx-auto max-w-6xl px-8 py-8">
+    <div className="mx-auto max-w-[1600px] px-8 py-8">
       <ViewHeader
         eyebrow="The finding"
         title="They do not recur at a locus. They converge on a pathway."
@@ -362,47 +362,75 @@ function SuperEnhancerSection({ se }: { se: SuperEnhancer }) {
           </div>
         </div>
 
-        {/* External hardening: A2 (confound) + A5 (AlphaGenome) */}
-        {(se.confoundTest || se.crossCheck || se.axisDecomp || se.targetLinking) && (
-          <div className="mt-6 border-t border-line pt-5">
-            <SectionLabel>External hardening (Claude Science): A2 + A5 + A7 + A9</SectionLabel>
-            <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+        {/* External hardening: A2 (confound) + A5 (AlphaGenome) + A7 + A9 + A3 + A4 */}
+        {(se.confoundTest || se.crossCheck || se.axisDecomp || se.targetLinking || se.contextTest || se.motifRediscovery) && (
+          <div className="mt-6 border-t border-line pt-5 lg:col-span-2">
+            <SectionLabel>External hardening (Claude Science): A2 + A5 + A7 + A9 + A3 + A4</SectionLabel>
+            {/* masonry columns so cards pack tightly (no dead white); each carries
+                its real Claude Science figure, zoomable via the lightbox. */}
+            <div className="mt-3 [column-gap:0.75rem] md:columns-2">
               {se.confoundTest && (
-                <div className="rounded-xl border border-brand-200 bg-brand-50/50 p-4">
+                <div className="mb-3 break-inside-avoid rounded-xl border border-brand-200 bg-brand-50/50 p-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[12.5px] font-bold text-ink">A2 · confound stress test</span>
                     <Tag tone="teal">{se.confoundTest.verdict}</Tag>
                   </div>
-                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.confoundTest.note}</p>
+                  <ExpandableImage src="hardening/a2.png" alt="A2 confound stress-test figure (phyloP by SE membership)" className="w-full object-contain" wrapClassName="mt-2 overflow-hidden rounded-lg border border-line bg-white" />
+                  <p className="mt-2 text-[12px] leading-snug text-ink/90">{se.confoundTest.note}</p>
                 </div>
               )}
               {se.crossCheck && (
-                <div className="rounded-xl border border-[#fde68a] bg-[#fefce8]/60 p-4">
+                <div className="mb-3 break-inside-avoid rounded-xl border border-[#fde68a] bg-[#fefce8]/60 p-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[12.5px] font-bold text-ink">A5 · AlphaGenome cross-check</span>
                     <Tag tone="teal">direction {se.crossCheck.directionAgreement}</Tag>
                     <Tag tone="amber">partial</Tag>
                   </div>
-                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.crossCheck.note}</p>
+                  <ExpandableImage src="hardening/a5.png" alt="A5 NCypher vs AlphaGenome concordance figure" className="w-full object-contain" wrapClassName="mt-2 overflow-hidden rounded-lg border border-line bg-white" />
+                  <p className="mt-2 text-[12px] leading-snug text-ink/90">{se.crossCheck.note}</p>
                 </div>
               )}
               {se.axisDecomp && (
-                <div className="rounded-xl border border-brand-200 bg-brand-50/50 p-4">
+                <div className="mb-3 break-inside-avoid rounded-xl border border-brand-200 bg-brand-50/50 p-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[12.5px] font-bold text-ink">A7 · axis decomposition</span>
                     <Tag tone="teal">rho = {se.axisDecomp.correlation}</Tag>
                   </div>
-                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.axisDecomp.note}</p>
+                  <ExpandableImage src="hardening/a7.png" alt="A7 axis-decomposition figure (chromatin vs constraint independence)" className="w-full object-contain" wrapClassName="mt-2 overflow-hidden rounded-lg border border-line bg-white" />
+                  <p className="mt-2 text-[12px] leading-snug text-ink/90">{se.axisDecomp.note}</p>
                 </div>
               )}
               {se.targetLinking && (
-                <div className="rounded-xl border border-[#fde68a] bg-[#fefce8]/60 p-4">
+                <div className="mb-3 break-inside-avoid rounded-xl border border-[#fde68a] bg-[#fefce8]/60 p-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[12.5px] font-bold text-ink">A9 · target-gene linking</span>
                     <Tag tone="teal">{se.targetLinking.reassignment}</Tag>
                     <Tag tone="amber">resource</Tag>
                   </div>
-                  <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.targetLinking.note}</p>
+                  <ExpandableImage src="hardening/a9.png" alt="A9 target-gene linking figure (ABC vs distance)" className="w-full object-contain" wrapClassName="mt-2 overflow-hidden rounded-lg border border-line bg-white" />
+                  <p className="mt-2 text-[12px] leading-snug text-ink/90">{se.targetLinking.note}</p>
+                </div>
+              )}
+              {se.contextTest && (
+                <div className="mb-3 break-inside-avoid rounded-xl border border-brand-200 bg-brand-50/50 p-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[12.5px] font-bold text-ink">A3 · multi-context specificity</span>
+                    <Tag tone="teal">{se.contextTest.verdict}</Tag>
+                    <Tag tone="amber">not OPC-exclusive</Tag>
+                  </div>
+                  <ExpandableImage src="hardening/a3.png" alt="A3 multi-context specificity heatmap (164 hits across four developing-brain contexts vs a fetal-heart control)" className="w-full object-contain" wrapClassName="mt-2 overflow-hidden rounded-lg border border-line bg-white" />
+                  <p className="mt-2 text-[12px] leading-snug text-ink/90">{se.contextTest.note}</p>
+                </div>
+              )}
+              {se.motifRediscovery && (
+                <div className="mb-3 break-inside-avoid rounded-xl border border-brand-200 bg-brand-50/50 p-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[12.5px] font-bold text-ink">A4 · TF-MoDISco rediscovery</span>
+                    <Tag tone="teal">{se.motifRediscovery.verdict}</Tag>
+                    <Tag>{se.motifRediscovery.soxSupport}</Tag>
+                  </div>
+                  <ExpandableImage src="hardening/a4.png" alt="A4 TF-MoDISco rediscovery figure (de-novo SOX/OLIG2/ETS motifs matched to JASPAR, plus NPAS3 saliency)" className="w-full object-contain" wrapClassName="mt-2 overflow-hidden rounded-lg border border-line bg-white" />
+                  <p className="mt-2 text-[12px] leading-snug text-ink/90">{se.motifRediscovery.note}</p>
                 </div>
               )}
             </div>

@@ -1,0 +1,19 @@
+{
+ "n": 164,
+ "hic_ok": 164,
+ "hic_eq_pl": 110,
+ "hic_eq_nearestTSS": 103,
+ "pl_eq_nearestTSS": 139,
+ "hic_eq_host": 40,
+ "changed_vs_pl": 54,
+ "loop_driven_changes": 18,
+ "loop_driven_with_eqtl": 0,
+ "triangulated": 8,
+ "a9_high_surviving_as_hic_top": 6,
+ "tiers": {
+  "AMBIGUOUS": 105,
+  "HOST-CONFIRMED": 33,
+  "LOOP-ONLY": 18,
+  "TRIANGULATED": 8
+ }
+}
