@@ -134,6 +134,7 @@ export interface SuperEnhancer {
     reassignment: string;
     verdict: string;
     note: string;
+    hicUpgrade?: string;
   };
   contextTest?: {
     verdict: string;

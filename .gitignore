@@ -24,6 +24,11 @@ models/
 *.fasta
 *.fai
 
+# EXCEPTION: the React dashboard imports its data from dashboard/src/data
+# (ncypher.json + content.ts), so that folder MUST be committed or the Pages
+# build fails, despite the broad data/ rule above.
+!dashboard/src/data/
+
 # ── Local-only: planning, docs, audit trail, metadata ──
 docs/
 CLAUDE.md
@@ -67,6 +72,12 @@ demo/assets/
 demo/scenes/
 demo/NCypher.imovielibrary/
 demo/openscreen project files/
+demo/*.mov
+demo/*.mp4
+demo/*.m4a
+demo/*.png
+demo/*.jpg
+demo/*.jpeg
 *.imovielibrary/
 .DS_Store
 .vscode/

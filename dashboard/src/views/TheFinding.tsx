@@ -409,6 +409,12 @@ function SuperEnhancerSection({ se }: { se: SuperEnhancer }) {
                   </div>
                   <ExpandableImage src="hardening/a9.png" alt="A9 target-gene linking figure (ABC vs distance)" className="w-full object-contain" wrapClassName="mt-2 overflow-hidden rounded-lg border border-line bg-white" />
                   <p className="mt-2 text-[12px] leading-snug text-ink/90">{se.targetLinking.note}</p>
+                  {se.targetLinking.hicUpgrade && (
+                    <div className="mt-2 rounded-lg border border-brand-200 bg-brand-50/60 p-2.5">
+                      <Tag tone="teal">A9b · real Hi-C confirmed</Tag>
+                      <p className="mt-1.5 text-[12px] leading-snug text-ink/90">{se.targetLinking.hicUpgrade}</p>
+                    </div>
+                  )}
                 </div>
               )}
               {se.contextTest && (

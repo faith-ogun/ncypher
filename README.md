@@ -14,6 +14,18 @@
 </p>
 
 <p align="center">
+  <a href="https://faith-ogun.github.io/ncypher/"><b>◆ Explore the live dashboard&nbsp;→</b></a>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/0EQfVwYXFG8"><b>▶ Watch the 3-minute demo</b></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="notebooks/reproduce.ipynb">Reproduce the finding</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="regulatory_map/">The regulatory map</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/faith-ogun/ncypher/actions/workflows/reproducibility.yml"><img src="https://github.com/faith-ogun/ncypher/actions/workflows/reproducibility.yml/badge.svg" alt="reproducibility"></a>
 </p>
 
