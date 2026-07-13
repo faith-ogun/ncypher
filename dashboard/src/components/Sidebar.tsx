@@ -66,7 +66,7 @@ export function Sidebar({
       <div className="px-5 pb-5 pt-5">
         <div className="rounded-xl border border-line bg-white p-2.5 shadow-card">
           <img
-            src="/logo_upscaled.png"
+            src="logo_upscaled.png"
             alt="NCypher, decode the non-coding"
             className="block w-full"
           />

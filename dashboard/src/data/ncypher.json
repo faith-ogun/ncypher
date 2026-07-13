@@ -15699,7 +15699,7 @@
         }
       ],
       "motifFrac": "4 of 29 disrupt a clear motif at >=50% (6 of 29 at >=30%)",
-      "figure": "/se_motif_readout.png",
+      "figure": "se_motif_readout.png",
       "confoundTest": {
         "verdict": "SURVIVES",
         "permP": "0.0010",
