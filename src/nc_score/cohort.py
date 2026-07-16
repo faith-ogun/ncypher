@@ -1,7 +1,7 @@
 """The DMG discovery cohort: somatic non-coding SNVs from OpenPedCan.
 
 Loads the compact non-coding SNV table extracted from the OpenPedCan consensus
-MAF (158 H3 K27M DMG patients, GRCh38), and computes the signals the discovery
+MAF (152 H3 K27M DMG patients, GRCh38), and computes the signals the discovery
 sweep needs:
 
   - **position recurrence**: the same chr:pos:ref:alt seen in >1 patient. Rare for
